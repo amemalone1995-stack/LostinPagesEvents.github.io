@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Lost In Pages Events</title>
 
     <style>
         * {
@@ -68,14 +68,14 @@
 <body>
 
     <header>
-        <h1>Welcome to My Website</h1>
-        <p>Your tagline goes here</p>
+        <h1>A Brand New Event in Brighton</h1>
+        <p>Two Bookish Artists Making Their Dreams Come True</p>
     </header>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
+        <a href="#services">Event Details</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -87,7 +87,7 @@
 
     <section id="about">
         <h2>About</h2>
-        <p>Add information about yourself, your company, or your project here.</p>
+        <p>In 2027 something exciting is coming to the city of Brighton.</p>
     </section>
 
     <section id="services">
