@@ -11,12 +11,12 @@
 :root {
     --night: #070c18;
     --navy: #0b1630;
-    --deep: #0e2342;
+    --magic: #9cc7ff;
     --text: #eef4ff;
     --muted: #b8c6e6;
-    --magic: #9cc7ff;
 }
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -28,10 +28,36 @@ html { scroll-behavior: smooth; }
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text);
+    overflow-x: hidden;
 
     background:
-        linear-gradient(180deg, rgba(7,12,24,0.86), rgba(7,12,24,0.95)),
+        linear-gradient(180deg, rgba(7,12,24,0.86), rgba(7,12,24,0.96)),
         url("background.jpg") center/cover fixed no-repeat;
+}
+
+/* 🌠 FLOATING STARS */
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: transparent;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    opacity: 0.4;
+    border-radius: 50%;
+    animation: floatStar linear infinite;
+}
+
+@keyframes floatStar {
+    from { transform: translateY(0); opacity: 0.2; }
+    to { transform: translateY(-100vh); opacity: 0.8; }
 }
 
 /* NAV */
@@ -39,7 +65,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(7, 12, 24, 0.75);
+    background: rgba(7, 12, 24, 0.6);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -47,7 +73,7 @@ nav {
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 28px;
+    gap: 26px;
     list-style: none;
     padding: 14px;
 }
@@ -55,29 +81,38 @@ nav ul {
 nav a {
     color: var(--text);
     text-decoration: none;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
-nav a:hover { color: var(--magic); }
+nav a:hover {
+    color: var(--magic);
+}
 
 /* HERO */
 header {
     text-align: center;
-    padding: 85px 20px 60px;
-    background: radial-gradient(circle at top, rgba(156,199,255,0.15), transparent 60%);
+    padding: 90px 20px 70px;
+    position: relative;
+    z-index: 1;
+
+    /* ✨ aurora glow */
+    background: radial-gradient(circle at top,
+        rgba(156,199,255,0.18),
+        transparent 60%);
 }
 
 .logo {
     width: 220px;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 15px rgba(156,199,255,0.35));
+    margin-bottom: 18px;
+    filter: drop-shadow(0 0 18px rgba(156,199,255,0.35));
 }
 
 .hero h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.6rem;
+    font-size: 3.7rem;
     color: var(--magic);
-    text-shadow: 0 0 25px rgba(156,199,255,0.25);
+    text-shadow: 0 0 30px rgba(156,199,255,0.25);
 }
 
 .hero p {
@@ -94,12 +129,18 @@ header {
     border-radius: 10px;
     font-weight: 600;
     text-decoration: none;
+    box-shadow: 0 0 25px rgba(156,199,255,0.25);
+    transition: 0.3s;
 }
 
-/* SECTIONS */
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* SECTIONS (scroll-reveal base) */
 section {
     max-width: 1050px;
-    margin: 70px auto;
+    margin: 80px auto;
     padding: 70px 22px;
 
     background: rgba(11, 22, 48, 0.55);
@@ -107,7 +148,14 @@ section {
     border-radius: 18px;
     backdrop-filter: blur(10px);
 
-    position: relative;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* decorative divider */
@@ -130,7 +178,7 @@ h2 {
     margin-bottom: 25px;
 }
 
-/* ORIGINAL TEXT STYLES */
+/* TEXT */
 .about p,
 .contact p {
     text-align: center;
@@ -150,29 +198,42 @@ h2 {
     border: 1px solid rgba(156,199,255,0.12);
     padding: 26px;
     border-radius: 16px;
-    transition: 0.3s;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ✨ magic sweep */
+.card::after {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -70%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(156,199,255,0.12), transparent);
+    transform: rotate(25deg);
+    transition: 0.6s;
+}
+
+.card:hover::after {
+    left: 120%;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(156,199,255,0.35);
+    transform: translateY(-8px);
+    border-color: rgba(156,199,255,0.4);
 }
 
 .card h3 {
     color: var(--magic);
     margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-}
-
-/* NEWSLETTER */
-.newsletter {
-    text-align: center;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 28px;
+    padding: 30px;
     color: var(--muted);
 }
 
@@ -181,10 +242,26 @@ footer {
     .hero h1 { font-size: 2.5rem; }
     .logo { width: 170px; }
 }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    section {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .star {
+        animation: none;
+    }
+}
 </style>
 </head>
 
 <body>
+
+<!-- 🌠 stars layer -->
+<div class="stars" id="stars"></div>
 
 <nav>
     <ul>
@@ -196,7 +273,7 @@ footer {
 </nav>
 
 <header>
-    <img src="Logo.jpg" class="logo" alt="Lost In Pages Events Logo">
+    <img src="Logo.jpg" class="logo" alt="Logo">
 
     <div class="hero">
         <h1>Lost In Pages Events</h1>
@@ -210,7 +287,7 @@ footer {
     </div>
 </header>
 
-<section id="about" class="about">
+<section id="about">
     <h2>About Us</h2>
 
     <!-- ORIGINAL TEXT RESTORED -->
@@ -241,10 +318,10 @@ footer {
     </div>
 </section>
 
-<section id="newsletter" class="newsletter">
+<section id="newsletter">
     <h2>Join Our Newsletter</h2>
 
-    <p style="color: var(--muted);">
+    <p style="text-align:center; color: var(--muted);">
         Be the first to hear about tickets and updates.
     </p>
 
@@ -256,7 +333,7 @@ footer {
     </iframe>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact">
     <h2>Contact Us</h2>
 
     <!-- ORIGINAL TEXT RESTORED -->
@@ -266,8 +343,38 @@ footer {
 </section>
 
 <footer>
-    <p>&copy; 2026 Lost In Pages Events. All Rights Reserved.</p>
+    <p>&copy; 2026 Lost In Pages Events</p>
 </footer>
+
+<script>
+/* 🌠 generate floating stars */
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 60; i++) {
+    const s = document.createElement("div");
+    s.classList.add("star");
+
+    s.style.left = Math.random() * 100 + "vw";
+    s.style.top = Math.random() * 100 + "vh";
+    s.style.animationDuration = (5 + Math.random() * 10) + "s";
+    s.style.opacity = Math.random();
+
+    stars.appendChild(s);
+}
+
+/* ✨ scroll reveal */
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.15 });
+
+sections.forEach(sec => observer.observe(sec));
+</script>
 
 </body>
 </html>
