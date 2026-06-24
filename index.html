@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lost In Pages Events</title>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --bg: #070d1a;
+    --panel: #0d1b33;
+    --panel-2: #0b162b;
+    --text: #e8f1ff;
+    --muted: #b7c7e3;
+    --accent: #7fb7ff;
+    --gold: #d4a017;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,20 +31,22 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #0b1220;
-    color: #cfe8ff;
+    color: var(--text);
+    background: 
+        linear-gradient(rgba(7,13,26,0.85), rgba(7,13,26,0.95)),
+        url("background.jpg") center/cover fixed no-repeat;
     line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(11, 18, 32, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 14px 0;
+    background: rgba(7, 13, 26, 0.8);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 14px 0;
 }
 
 nav ul {
@@ -46,74 +58,70 @@ nav ul {
 }
 
 nav a {
-    color: #ffffff;
+    color: var(--text);
     text-decoration: none;
     font-weight: 500;
-    font-family: 'Inter', sans-serif;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #d4a017;
+    color: var(--accent);
 }
 
-/* HERO / LOGO AREA */
+/* HEADER */
 header {
     text-align: center;
 }
 
-/* DARK BLUE LOGO BACKGROUND */
 .logo-section {
-    background: #08162d;
-    padding: 40px 20px;
+    padding: 45px 20px;
+    background: linear-gradient(180deg, #081428, #070d1a);
 }
 
 .logo {
     width: 220px;
-    height: auto;
+    filter: drop-shadow(0 0 10px rgba(127,183,255,0.4));
 }
 
-/* HERO TEXT */
 .hero {
-    padding: 40px 20px 60px;
-    background: linear-gradient(to bottom, #08162d, #0b1220);
+    padding: 50px 20px 70px;
+    background: radial-gradient(circle at top, rgba(127,183,255,0.12), transparent 60%);
 }
 
 .hero h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.4rem;
-    color: #6db3f2;
-    margin-bottom: 10px;
+    font-size: 3.6rem;
+    color: var(--accent);
+    text-shadow: 0 0 20px rgba(127,183,255,0.3);
 }
 
 .hero p {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    opacity: 0.9;
+    color: var(--muted);
+    margin-top: 8px;
 }
 
-/* BUTTON */
 .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #d4a017;
-    color: #0b1220;
+    margin-top: 22px;
+    padding: 12px 26px;
+    background: var(--accent);
+    color: #081428;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: 600;
     transition: 0.3s;
+    box-shadow: 0 0 20px rgba(127,183,255,0.25);
 }
 
 .btn:hover {
-    background: #b8860b;
+    transform: translateY(-2px);
 }
 
 /* SECTIONS */
 section {
     max-width: 1100px;
     margin: auto;
-    padding: 70px 20px;
+    padding: 80px 20px;
 }
 
 h2 {
@@ -121,15 +129,17 @@ h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.4rem;
     margin-bottom: 25px;
-    color: #f8fafc;
+    color: var(--text);
+    letter-spacing: 0.5px;
 }
 
 /* ABOUT */
 .about p {
     text-align: center;
-    font-size: 1.1rem;
     max-width: 800px;
     margin: auto;
+    color: var(--muted);
+    font-size: 1.1rem;
 }
 
 /* GRID */
@@ -140,53 +150,63 @@ h2 {
 }
 
 .card {
-    background: #121f36;
+    background: linear-gradient(145deg, var(--panel), var(--panel-2));
     padding: 25px;
-    border-radius: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    border-color: rgba(127,183,255,0.3);
 }
 
 .card h3 {
-    color: #d4a017;
+    color: var(--accent);
     margin-bottom: 10px;
     font-family: 'Playfair Display', serif;
 }
 
 /* NEWSLETTER */
 .newsletter {
-    background: #08162d;
-    border-radius: 12px;
+    background: rgba(13, 27, 51, 0.7);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
+    backdrop-filter: blur(10px);
 }
 
 /* CONTACT */
 .contact {
     text-align: center;
+    color: var(--muted);
+}
+
+.contact p {
+    margin: 6px 0;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 25px;
-    background: #050a14;
+    background: rgba(5, 10, 20, 0.9);
     font-size: 0.9rem;
-    color: #7ea6c9;
+    color: var(--muted);
+    border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
     }
 
     .logo {
-        width: 180px;
+        width: 170px;
     }
 }
 </style>
@@ -204,7 +224,6 @@ footer {
 </nav>
 
 <header>
-
     <div class="logo-section">
         <img src="Logo.jpg" alt="Lost In Pages Events Logo" class="logo">
     </div>
@@ -212,18 +231,17 @@ footer {
     <div class="hero">
         <h1>Lost In Pages Events</h1>
         <p>We heard the bookish community loud and clear.</p>
-        <p>We are bringing a book event to the South Coast.</p>
-        <p>Brighton September 2027</p>
+        <p>A literary experience coming to the South Coast.</p>
+        <p>Brighton • September 2027</p>
         <a href="#event" class="btn">Discover More</a>
     </div>
-
 </header>
 
 <section id="about" class="about">
     <h2>About Us</h2>
     <p>
-        Lost In Pages Events is created by two bookish artists with a dream of bringing magical
-        literary experiences to life on the South Coast.
+        Lost In Pages Events is created by two bookish artists with a vision to bring immersive,
+        celestial-inspired literary experiences to life on the South Coast.
     </p>
 </section>
 
@@ -232,35 +250,36 @@ footer {
 
     <div class="grid">
         <div class="card">
-            <h3>Our Authors</h3>
-            <p>Panels, Q&As, and signings from beloved authors.</p>
+            <h3>Authors</h3>
+            <p>Panels, Q&As, and signings with beloved and emerging voices.</p>
         </div>
 
         <div class="card">
-            <h3>Our Vendors</h3>
-            <p>Independent bookshops, creators, and bookish merch.</p>
+            <h3>Vendors</h3>
+            <p>Independent bookshops, creators, and curated bookish goods.</p>
         </div>
 
         <div class="card">
-            <h3>Our Policies</h3>
-            <p>Everything you need to know before attending.</p>
+            <h3>Experience</h3>
+            <p>Atmospheric spaces inspired by constellations, stories, and dreams.</p>
         </div>
     </div>
 </section>
 
 <section id="newsletter" class="newsletter">
     <h2>Join Our Newsletter</h2>
-    <p>Be the first to hear about tickets and updates.</p>
+    <p>Be the first to hear about tickets and announcements.</p>
 
     <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSfaoxTG4EFEg1JrciLuYrGdon9V8X9vvr7cZRnm9fXDVitEPQ/viewform?embedded=true"
         width="100%"
-        height="200">
+        height="220"
+        style="border: none; margin-top: 20px;">
     </iframe>
 </section>
 
 <section id="contact" class="contact">
-    <h2>Contact Us</h2>
+    <h2>Contact</h2>
     <p>Email: lostinpagesevents@gmail.com</p>
     <p>Instagram: @lostinpagesevents</p>
     <p>TikTok: @lostinpagesevent</p>
