@@ -12,11 +12,9 @@
     --night: #070c18;
     --navy: #0b1630;
     --deep: #0e2342;
-    --mist: rgba(255,255,255,0.08);
     --text: #eef4ff;
     --muted: #b8c6e6;
     --magic: #9cc7ff;
-    --gold: #d6b25e;
 }
 
 * {
@@ -25,17 +23,14 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text);
 
-    /* 🌌 enchanted night sky */
     background:
-        linear-gradient(180deg, rgba(7,12,24,0.85), rgba(7,12,24,0.95)),
+        linear-gradient(180deg, rgba(7,12,24,0.86), rgba(7,12,24,0.95)),
         url("background.jpg") center/cover fixed no-repeat;
 }
 
@@ -44,9 +39,9 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(7, 12, 24, 0.7);
+    background: rgba(7, 12, 24, 0.75);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--mist);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 nav ul {
@@ -60,34 +55,29 @@ nav ul {
 nav a {
     color: var(--text);
     text-decoration: none;
-    letter-spacing: 1px;
-    font-size: 0.95rem;
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: var(--magic);
-}
+nav a:hover { color: var(--magic); }
 
-/* HERO — “festival gate” */
+/* HERO */
 header {
     text-align: center;
-    padding: 90px 20px 60px;
+    padding: 85px 20px 60px;
     background: radial-gradient(circle at top, rgba(156,199,255,0.15), transparent 60%);
-    border-bottom: 1px solid var(--mist);
 }
 
 .logo {
-    width: 230px;
+    width: 220px;
     margin-bottom: 20px;
     filter: drop-shadow(0 0 15px rgba(156,199,255,0.35));
 }
 
 .hero h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.8rem;
+    font-size: 3.6rem;
     color: var(--magic);
-    text-shadow: 0 0 30px rgba(156,199,255,0.25);
+    text-shadow: 0 0 25px rgba(156,199,255,0.25);
 }
 
 .hero p {
@@ -97,36 +87,30 @@ header {
 
 .btn {
     display: inline-block;
-    margin-top: 24px;
-    padding: 12px 28px;
+    margin-top: 22px;
+    padding: 12px 26px;
     background: var(--magic);
-    color: #08101f;
-    border-radius: 12px;
+    color: #071021;
+    border-radius: 10px;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 0 25px rgba(156,199,255,0.25);
-    transition: 0.3s;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-/* ✨ SECTION = “CHAPTER SCROLLS” */
+/* SECTIONS */
 section {
     max-width: 1050px;
     margin: 70px auto;
     padding: 70px 22px;
 
     background: rgba(11, 22, 48, 0.55);
-    border: 1px solid var(--mist);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 18px;
     backdrop-filter: blur(10px);
 
     position: relative;
 }
 
-/* ornamental divider */
+/* decorative divider */
 section::before {
     content: "❦ ❦ ❦";
     position: absolute;
@@ -134,31 +118,27 @@ section::before {
     left: 50%;
     transform: translateX(-50%);
     background: var(--night);
-    padding: 0 14px;
+    padding: 0 12px;
     color: var(--magic);
-    letter-spacing: 6px;
-    font-size: 14px;
 }
 
-/* SECTION TITLES */
+/* TITLES */
 h2 {
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-size: 2.4rem;
     margin-bottom: 25px;
-    color: var(--text);
 }
 
-/* ABOUT */
-.about p {
+/* ORIGINAL TEXT STYLES */
+.about p,
+.contact p {
     text-align: center;
-    max-width: 800px;
-    margin: auto;
     color: var(--muted);
     font-size: 1.1rem;
 }
 
-/* GRID CARDS — “scroll panels” */
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -166,30 +146,11 @@ h2 {
 }
 
 .card {
-    background: linear-gradient(145deg, rgba(14,35,66,0.65), rgba(11,22,48,0.65));
+    background: rgba(14, 35, 66, 0.6);
     border: 1px solid rgba(156,199,255,0.12);
     padding: 26px;
     border-radius: 16px;
-    transition: 0.35s;
-    position: relative;
-    overflow: hidden;
-}
-
-/* subtle “magic glow sweep” */
-.card::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -60%;
-    width: 60%;
-    height: 200%;
-    background: linear-gradient(90deg, transparent, rgba(156,199,255,0.08), transparent);
-    transform: rotate(25deg);
-    transition: 0.6s;
-}
-
-.card:hover::after {
-    left: 120%;
+    transition: 0.3s;
 }
 
 .card:hover {
@@ -208,33 +169,17 @@ h2 {
     text-align: center;
 }
 
-/* CONTACT */
-.contact {
-    text-align: center;
-    color: var(--muted);
-}
-
-.contact p {
-    margin: 6px 0;
-}
-
 /* FOOTER */
 footer {
     text-align: center;
     padding: 28px;
     color: var(--muted);
-    font-size: 0.9rem;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.6rem;
-    }
-
-    .logo {
-        width: 170px;
-    }
+    .hero h1 { font-size: 2.5rem; }
+    .logo { width: 170px; }
 }
 </style>
 </head>
@@ -255,46 +200,52 @@ footer {
 
     <div class="hero">
         <h1>Lost In Pages Events</h1>
-        <p>A gathering of stories, ink, and starlight</p>
-        <p>Brighton • September 2027</p>
 
-        <a href="#event" class="btn">Enter the Fair</a>
+        <!-- ORIGINAL TEXT RESTORED -->
+        <p>We heard the bookish community loud and clear.</p>
+        <p>We are bringing a book event to the South Coast.</p>
+        <p>Brighton September 2027</p>
+
+        <a href="#event" class="btn">Discover More</a>
     </div>
 </header>
 
-<section id="about">
-    <h2>The Story Begins</h2>
+<section id="about" class="about">
+    <h2>About Us</h2>
+
+    <!-- ORIGINAL TEXT RESTORED -->
     <p>
-        Lost In Pages Events is a fantasy-inspired book fair woven from imagination, 
-        bringing readers, writers, and creators together under a starlit sky.
+        Lost In Pages Events is created by two bookish artists with a dream of bringing magical
+        literary experiences to life on the South Coast.
     </p>
 </section>
 
 <section id="event">
-    <h2>The Grand Fair</h2>
+    <h2>Brighton Book Event 2027</h2>
 
     <div class="grid">
         <div class="card">
-            <h3>The Scribes</h3>
-            <p>Author panels, readings, and intimate signings from across realms of fiction.</p>
+            <h3>Our Authors</h3>
+            <p>Panels, Q&amp;As, and signings from beloved authors.</p>
         </div>
 
         <div class="card">
-            <h3>The Merchants</h3>
-            <p>Independent bookshops, artisan creators, and enchanted bookish goods.</p>
+            <h3>Our Vendors</h3>
+            <p>Independent bookshops, creators, and bookish merch.</p>
         </div>
 
         <div class="card">
-            <h3>The Realm</h3>
-            <p>Immersive spaces inspired by constellations, folklore, and fantasy worlds.</p>
+            <h3>Our Policies</h3>
+            <p>Everything you need to know before attending.</p>
         </div>
     </div>
 </section>
 
 <section id="newsletter" class="newsletter">
-    <h2>Join the Guild</h2>
+    <h2>Join Our Newsletter</h2>
+
     <p style="color: var(--muted);">
-        Receive whispers of tickets, announcements, and hidden updates.
+        Be the first to hear about tickets and updates.
     </p>
 
     <iframe
@@ -305,15 +256,17 @@ footer {
     </iframe>
 </section>
 
-<section id="contact">
-    <h2>The Messenger’s Post</h2>
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+
+    <!-- ORIGINAL TEXT RESTORED -->
     <p>Email: lostinpagesevents@gmail.com</p>
     <p>Instagram: @lostinpagesevents</p>
     <p>TikTok: @lostinpagesevent</p>
 </section>
 
 <footer>
-    <p>© 2026 Lost In Pages Events — Written under starlight</p>
+    <p>&copy; 2026 Lost In Pages Events. All Rights Reserved.</p>
 </footer>
 
 </body>
