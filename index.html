@@ -5,203 +5,195 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lost In Pages Events</title>
 
-<!-- Cursive heading font -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    html {
-        scroll-behavior: smooth;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    body {
-        font-family: Great Vibes, Cursive;
-        background: url("Background.png") center no-repeat;
-       background size: contain
-        position: relative;
-        color: #6DB3F2;
-        line-height: 1.6;
-    }
-   
-    /* NAVIGATION */
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background: rgba(11, 18, 32, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 14px 0;
-    }
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0b1220;
+    color: #cfe8ff;
+    line-height: 1.6;
+}
 
-    nav ul {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        list-style: none;
-        flex-wrap: wrap;
-    }
+/* NAVIGATION */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(11, 18, 32, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-    }
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    flex-wrap: wrap;
+}
 
-    nav a:hover {
-        color: #d4a017;
-    }
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    transition: 0.3s;
+}
 
-    /* HERO (LOGO FULL WIDTH) */
-    header {
-        text-align: center;
-        background: #000;
+nav a:hover {
+    color: #d4a017;
+}
+
+/* HERO / LOGO AREA */
+header {
+    text-align: center;
+}
+
+/* DARK BLUE LOGO BACKGROUND */
+.logo-section {
+    background: #08162d;
+    padding: 40px 20px;
+}
+
+.logo {
+    width: 220px;
+    height: auto;
+}
+
+/* HERO TEXT */
+.hero {
+    padding: 40px 20px 60px;
+    background: linear-gradient(to bottom, #08162d, #0b1220);
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.4rem;
+    color: #6db3f2;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #d4a017;
+    color: #0b1220;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b8860b;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 20px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+    color: #f8fafc;
+}
+
+/* ABOUT */
+.about p {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #121f36;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #d4a017;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* NEWSLETTER */
+.newsletter {
+    background: #08162d;
+    border-radius: 12px;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #050a14;
+    font-size: 0.9rem;
+    color: #7ea6c9;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.4rem;
     }
 
     .logo {
-        width: 200px;
-        height: auto;
-        object-fit: contain;
+        width: 180px;
     }
-
-</head>
-    .hero {
-        padding: 40px 20px 60px;
-    }
-
-    .hero h1 {
-        font-family: 'Great Vibes', cursive;
-        font-size: 3.2rem;
-        margin-bottom: 10px;
-        background: url("Background.png") center no-repeat;
-       background size: contain
-        position: relative;
-        color: #6DB3F2;
-        line-height: 1.6
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        margin-bottom: 20px;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 12px 25px;
-        background: #d4a017;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 8px;
-        transition: 0.3s;
-    }
-
-    .btn:hover {
-        background: #b8860b;
-    }
-
-    /* SECTIONS */
-    section {
-        max-width: 1100px;
-        margin: auto;
-        padding: 70px 20px;
-    }
-
-    h2 {
-        text-align: center;
-        font-family: 'Great Vibes', cursive;
-        font-size: 2.6rem;
-        margin-bottom: 25px;
-        color: #f8fafc;
-    }
-
-    /* ABOUT */
-    .about p {
-        text-align: center;
-        font-size: 1.1rem;
-        opacity: 0.95;
-        max-width: 800px;
-        margin: auto;
-    }
-
-    /* EVENT GRID */
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 25px;
-    }
-
-    .card {
-        background: #1e293b;
-        padding: 25px;
-        border-radius: 12px;
-        transition: 0.3s;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-    }
-
-    .card h3 {
-        color: #d4a017;
-        margin-bottom: 10px;
-    }
-
-    /* SUBSCRIBE */
-    .newsletter {
-       background: url("Background.png") center repeat;
-       background size: contain
-        position: relative;
-        color: #6DB3F2;
-        line-height: 1.6; #1e3a8a;
-        border-radius: 12px;
-        text-align: center;
-        padding: 50px 20px;
-    }
-
-    iframe {
-        margin-top: 20px;
-        border-radius: 10px;
-    }
-
-    /* CONTACT */
-    .contact {
-        text-align: center;
-    }
-
-    .contact p {
-        margin: 6px 0;
-    }
-
-    footer {
-        text-align: center;
-        padding: 25px;
-        background: #020617;
-        font-size: 0.9rem;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-        .logo {
-            height: 260px;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-        }
-    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
     <ul>
         <li><a href="#about">About</a></li>
@@ -211,64 +203,62 @@
     </ul>
 </nav>
 
-<!-- HERO -->
 <header>
-    <img src="Logo.jpg" alt="Lost In Pages Events Logo" class="logo">
+
+    <div class="logo-section">
+        <img src="Logo.jpg" alt="Lost In Pages Events Logo" class="logo">
+    </div>
 
     <div class="hero">
-        <h1>Lost In Pages Event</h1>
+        <h1>Lost In Pages Events</h1>
         <p>We heard the bookish community loud and clear.</p>
-       <p>We are bringing a book event to the South Coast</p>
-       <p>Brighton September 2027</p>
+        <p>We are bringing a book event to the South Coast.</p>
+        <p>Brighton September 2027</p>
         <a href="#event" class="btn">Discover More</a>
     </div>
+
 </header>
 
-<!-- ABOUT -->
 <section id="about" class="about">
     <h2>About Us</h2>
     <p>
         Lost In Pages Events is created by two bookish artists with a dream of bringing magical
-        literary experiences to life on the South Coast. From panels and Q&As to signings,
-        shopping, and immersive activities — we build events for readers, by readers.
+        literary experiences to life on the South Coast.
     </p>
 </section>
 
-<!-- EVENT -->
 <section id="event">
     <h2>Brighton Book Event 2027</h2>
 
     <div class="grid">
         <div class="card">
             <h3>Our Authors</h3>
-            <p>Discover confirmed authors, panel discussions, Q&As, and signing schedules.</p>
+            <p>Panels, Q&As, and signings from beloved authors.</p>
         </div>
 
         <div class="card">
             <h3>Our Vendors</h3>
-            <p>Browse independent bookshops, creators, and unique bookish merchandise.</p>
+            <p>Independent bookshops, creators, and bookish merch.</p>
         </div>
 
         <div class="card">
             <h3>Our Policies</h3>
-            <p>Everything you need to know before attending the event.</p>
+            <p>Everything you need to know before attending.</p>
         </div>
     </div>
 </section>
 
-<!-- NEWSLETTER -->
 <section id="newsletter" class="newsletter">
     <h2>Join Our Newsletter</h2>
-    <p>Be the first to hear about tickets, announcements, and event updates.</p>
+    <p>Be the first to hear about tickets and updates.</p>
 
     <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfaoxTG4EFEg1JrciLuYrGdon9V8X9vvr7cZRnm9fXDVitEPQ/viewform?usp=publish-editor/embedded=false"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfaoxTG4EFEg1JrciLuYrGdon9V8X9vvr7cZRnm9fXDVitEPQ/viewform?embedded=true"
         width="100%"
         height="200">
     </iframe>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <p>Email: lostinpagesevents@gmail.com</p>
@@ -276,7 +266,6 @@
     <p>TikTok: @lostinpagesevent</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>&copy; 2026 Lost In Pages Events. All Rights Reserved.</p>
 </footer>
