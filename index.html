@@ -102,13 +102,14 @@ header {
 }
 
 .logo {
-    width:95% ;
+    display: block;
+    width: 100%;
+    max-width: none;
     height: auto;
-    fit: block;
-    margin-bottom: 18px;
+    margin: 0 auto 18px;
     filter: drop-shadow(0 0 18px rgba(156,199,255,0.35));
 }
-
+    
 .hero h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 3.7rem;
@@ -243,9 +244,15 @@ footer {
 }
 
 /* MOBILE */
+
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .logo { width: 170px; }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .logo {
+        width: 100%;
+    }
 }
 
 /* reduced motion */
