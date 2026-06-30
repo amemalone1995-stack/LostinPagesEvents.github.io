@@ -22,7 +22,9 @@
     box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -55,8 +57,14 @@ body {
 }
 
 @keyframes floatStar {
-    from { transform: translateY(0); opacity: 0.2; }
-    to { transform: translateY(-100vh); opacity: 0.8; }
+    from {
+        transform: translateY(0);
+        opacity: 0.2;
+    }
+    to {
+        transform: translateY(-100vh);
+        opacity: 0.8;
+    }
 }
 
 /* NAV */
@@ -95,7 +103,6 @@ header {
     position: relative;
     z-index: 1;
 
-    /* ✨ aurora glow */
     background: radial-gradient(circle at top,
         rgba(156,199,255,0.18),
         transparent 60%);
@@ -114,8 +121,7 @@ header {
         0 0 12px rgba(156,199,255,0.4),
         0 0 30px rgba(156,199,255,0.2);
 }
-}
-    
+
 .hero h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 3.7rem;
@@ -145,8 +151,7 @@ header {
     transform: translateY(-3px);
 }
 
-/* SECTIONS (scroll-reveal base) */
-
+/* SECTIONS */
 section {
     position: relative;
     max-width: 1050px;
@@ -156,8 +161,15 @@ section {
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 18px;
     backdrop-filter: blur(10px);
+
+    opacity: 0;
     transform: translateY(40px);
-    transition: all 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 section::before {
@@ -172,8 +184,6 @@ section::before {
     white-space: nowrap;
     font-size: 0.9rem;
 }
-
-
 
 /* TITLES */
 h2 {
@@ -191,7 +201,6 @@ h2 {
     font-size: 1.1rem;
 }
 
-/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -208,7 +217,6 @@ h2 {
     overflow: hidden;
 }
 
-/* ✨ magic sweep */
 .card::after {
     content: "";
     position: absolute;
@@ -235,14 +243,11 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
     color: var(--muted);
 }
-
-/* MOBILE */
 
 @media (max-width: 900px) {
     .hero h1 {
@@ -254,7 +259,6 @@ footer {
     }
 }
 
-/* reduced motion */
 @media (prefers-reduced-motion: reduce) {
     section {
         transition: none;
@@ -271,7 +275,6 @@ footer {
 
 <body>
 
-<!-- 🌠 stars layer -->
 <div class="stars" id="stars"></div>
 
 <nav>
@@ -289,10 +292,9 @@ footer {
     <div class="hero">
         <h1>Lost In Pages Events</h1>
 
-        <!-- ORIGINAL TEXT RESTORED -->
         <p>We heard the bookish community loud and clear.</p>
         <p>We are bringing a book event to the South Coast.</p>
-        <p>Brighton September 2027</p> 
+        <p>Brighton September 2027</p>
 
         <a href="#event" class="btn">Discover More</a>
     </div>
@@ -301,7 +303,6 @@ footer {
 <section id="about">
     <h2>About Us</h2>
 
-    <!-- ORIGINAL TEXT RESTORED -->
     <p>
         Lost In Pages Events is created by two bookish artists with a dream of bringing magical
         literary experiences to life on the South Coast.
@@ -347,22 +348,21 @@ footer {
 <section id="contact">
     <h2>Contact Us</h2>
 
-    <!-- ORIGINAL TEXT RESTORED -->
- <p>Email: lostinpagesevents@gmail.com</p>
+    <p>Email: lostinpagesevents@gmail.com</p>
 
-<p>
-    Instagram:
-    <a href="https://instagram.com/lostinpagesevents" target="_blank">
-        @lostinpagesevents
-    </a>
-</p>
+    <p>
+        Instagram:
+        <a href="https://instagram.com/lostinpagesevents" target="_blank" rel="noopener noreferrer">
+            @lostinpagesevents
+        </a>
+    </p>
 
-<p>
-    TikTok:
-    <a href="https://tiktok.com/@lostinpagesevent" target="_blank">
-        @lostinpagesevent
-    </a>
-</p>
+    <p>
+        TikTok:
+        <a href="https://tiktok.com/@lostinpagesevent" target="_blank" rel="noopener noreferrer">
+            @lostinpagesevent
+        </a>
+    </p>
 </section>
 
 <footer>
@@ -370,7 +370,6 @@ footer {
 </footer>
 
 <script>
-/* 🌠 generate floating stars */
 const stars = document.getElementById("stars");
 
 for (let i = 0; i < 60; i++) {
@@ -385,7 +384,6 @@ for (let i = 0; i < 60; i++) {
     stars.appendChild(s);
 }
 
-/* ✨ scroll reveal */
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
@@ -394,9 +392,11 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add("show");
         }
     });
-}, { threshold: 0.15 });
+}, {
+    threshold: 0.15
+});
 
-sections.forEach(sec => observer.observe(sec));
+sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
