@@ -140,38 +140,32 @@ header {
 }
 
 /* SECTIONS (scroll-reveal base) */
+
 section {
+    position: relative;
     max-width: 1050px;
     margin: 80px auto;
     padding: 70px 22px;
-
     background: rgba(11, 22, 48, 0.55);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 18px;
     backdrop-filter: blur(10px);
-
     opacity: 0;
     transform: translateY(40px);
     transition: all 1s ease;
 }
 
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* decorative divider */
-&::before {
-    content: "✦✧✦✧✦.·:·.☽✧ ✦ ✧☾.·:·.✦✧✦✧✦";
+section::before {
+    content: "✦✧✦✧✦ · ☽ ✧ ☾ · ✦✧✦✧✦";
     position: absolute;
-    top: -18px;
+    top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    width: max-content;
     padding: 0 12px;
     background: var(--night);
     color: var(--magic);
     white-space: nowrap;
+    font-size: 0.9rem;
 }
 
 
@@ -350,8 +344,18 @@ footer {
 
     <!-- ORIGINAL TEXT RESTORED -->
     <p>Email: lostinpagesevents@gmail.com</p>
-    <p>Instagram: @lostinpagesevents</p>
-    <p>TikTok: @lostinpagesevent</p>
+Instagram:
+<a href="https://instagram.com/lostinpagesevents" target="_blank">
+@lostinpagesevents
+</a>
+</p>
+
+<p>
+TikTok:
+<a href="https://tiktok.com/@lostinpagesevent" target="_blank">
+@lostinpagesevent
+</a>
+</p>
 </section>
 
 <footer>
