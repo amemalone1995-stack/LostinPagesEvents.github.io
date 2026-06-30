@@ -158,21 +158,20 @@ section.show {
 }
 
 /* decorative divider */
-section::before {
+&::before {
     content: "✦✧✦✧✦.·:·.☽✧ ✦ ✧☾.·:·.✦✧✦✧✦";
     position: absolute;
-top: -18px;
-left: 50%;
-transform: translateX(-50%);
-
-display: inline-block;
-width: max-content; /* or width: fit-content; */
-
-background: var(--night);
-padding: 0 12px;
-color: var(--magic);
-white-space: nowrap;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    padding: 0 12px;
+    background: var(--night);
+    color: var(--magic);
+    white-space: nowrap;
 }
+
+
 
 /* TITLES */
 h2 {
