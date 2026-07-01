@@ -174,19 +174,27 @@ section.show {
     transform: translateY(0);
 }
 
+section {
+    position: relative;
+}
+
 section::before {
     content: "· ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ ·";
     position: absolute;
     top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 0 12px;
+
+    display: inline-block;
+    padding: 0.25rem 12px;
 
     background: var(--midnight);
     color: rgba(255, 255, 255, 0.85);
 
     white-space: nowrap;
     font-size: 0.9rem;
+    border-radius: 999px; /* optional: makes it look like a label */
+    z-index: 1;
 }
 
 /* TITLES */
