@@ -21,6 +21,8 @@
 }
 
 body{
+    <div id="stars"></div>
+    <div id="shooting-stars"></div>
     font-family:'Inter',sans-serif;
     color:white;
     background: var(--midnight);
@@ -30,23 +32,68 @@ body{
 
 
 
-body::before{
-    filter: blur(0.3px);
-    content:"";
+body {
+    font-family:'Inter',sans-serif;
+    color:white;
+    background: radial-gradient(circle at top, #1b1b4d, #050510);
+    overflow-x: hidden;
+    position: relative;
+}
+    
+    #stars, #shooting-stars {
     position: fixed;
     inset: 0;
     pointer-events: none;
-
-    background:
-        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.9), transparent),
-        radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.8), transparent),
-        radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.7), transparent),
-        radial-gradient(2px 2px at 90% 10%, rgba(255,255,255,0.9), transparent),
-        radial-gradient(1px 1px at 10% 90%, rgba(255,255,255,0.8), transparent),
-        radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.7), transparent);
-
-    opacity: 0.9;
     z-index: 0;
+}
+
+/* star dots */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+/* bigger occasional stars */
+.star.big {
+    width: 3px;
+    height: 3px;
+    opacity: 1;
+}
+
+/* twinkle animation */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.4); }
+}
+
+/* shooting stars */
+.shooting-star {
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    opacity: 0;
+    transform: rotate(-25deg);
+    animation: shoot 1.2s linear forwards;
+}
+
+@keyframes shoot {
+    0% {
+        opacity: 0;
+        transform: translateX(0) translateY(0) rotate(-25deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-400px) translateY(300px) rotate(-25deg);
+    }
 }
 
 
