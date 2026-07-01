@@ -21,81 +21,38 @@
 }
 
 body{
-    <div id="stars"></div>
-    <div id="shooting-stars"></div>
-    font-family:'Inter',sans-serif;
-    color:white;
-    background: var(--midnight);
-    position: relative;
-    overflow-x: hidden;
-}
-
-
-
-body {
     font-family:'Inter',sans-serif;
     color:white;
     background: radial-gradient(circle at top, #1b1b4d, #050510);
-    overflow-x: hidden;
     position: relative;
+    overflow-x: hidden;
 }
-    
-    #stars, #shooting-stars {
+
+/* STAR LAYERS */
+#stars, #shooting-stars{
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 0;
 }
 
-/* star dots */
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
+header, .container, footer{
+    position: relative;
+    z-index: 1;
+}
+
+/* STAR STYLE */
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:0.8;
     animation: twinkle 3s infinite ease-in-out;
 }
 
-/* bigger occasional stars */
-.star.big {
-    width: 3px;
-    height: 3px;
-    opacity: 1;
-}
-
-/* twinkle animation */
-@keyframes twinkle {
-    0%, 100% { opacity: 0.2; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.4); }
-}
-
-/* shooting stars */
-.shooting-star {
-    position: absolute;
-    width: 120px;
-    height: 2px;
-    background: linear-gradient(90deg, white, transparent);
-    opacity: 0;
-    transform: rotate(-25deg);
-    animation: shoot 1.2s linear forwards;
-}
-
-@keyframes shoot {
-    0% {
-        opacity: 0;
-        transform: translateX(0) translateY(0) rotate(-25deg);
-    }
-    10% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-400px) translateY(300px) rotate(-25deg);
-    }
-}
-
+.star.big
 
 header, .container, footer{
     position: relative;
