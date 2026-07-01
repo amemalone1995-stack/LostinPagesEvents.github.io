@@ -24,17 +24,14 @@ body{
     font-family:'Inter',sans-serif;
     color:white;
     background: var(--midnight);
-}
-
-body{
     position: relative;
     overflow-x: hidden;
 }
 
 
 
-/* STAR LAYER */
 body::before{
+    filter: blur(0.3px);
     content:"";
     position: fixed;
     inset: 0;
@@ -53,14 +50,11 @@ body::before{
 }
 
 
-body{
-    font-family:'Inter',sans-serif;
-    color:white;
-    background: var(--midnight);
+header, .container, footer{
     position: relative;
-    overflow-x: hidden;
+    z-index: 1;
 }
-
+    
 header{
     text-align:center;
     padding:70px 20px;
