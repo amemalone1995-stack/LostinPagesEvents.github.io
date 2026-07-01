@@ -1,59 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Policies | Lost In Pages Events</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Policies | Lost In Pages Events</title>
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            background:#483D8B;
-            color:white;
-            max-width:900px;
-            margin:50px auto;
-            padding:20px;
-            line-height:1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-        h1{
-            color:white;
-            text-align:center;
-        }
+<style>
+:root{
+    --night:#483D8B;
+    --magic:#FFFFFF;
+    --accent:#9932CC;
+}
 
-        .back{
-            display:inline-block;
-            margin-top:30px;
-            padding:12px 20px;
-            background:white;
-            color:#483D8B;
-            text-decoration:none;
-            border-radius:8px;
-            font-weight:bold;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .back:hover{
-            opacity:0.9;
-        }
-    </style>
+body{
+    font-family:'Inter',sans-serif;
+    color:white;
+    background:
+        linear-gradient(180deg, rgba(7,12,24,.86), rgba(7,12,24,.96)),
+        url("background.jpg") center/cover fixed no-repeat;
+}
+
+header{
+    text-align:center;
+    padding:70px 20px;
+}
+
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:4rem;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#F8F8FF;
+}
+
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.policy{
+    background:white;
+    color:#9932CC;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:18px;
+    border:2px solid #9932CC;
+    box-shadow:0 0 20px rgba(0,0,0,.15);
+}
+
+.policy h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:15px;
+}
+
+.policy p{
+    line-height:1.8;
+}
+
+.back{
+    display:inline-block;
+    margin:40px auto;
+    padding:14px 30px;
+    background:white;
+    color:#483D8B;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+}
+
+.back:hover{
+    transform:translateY(-2px);
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:white;
+}
+</style>
 </head>
+
 <body>
 
-<h1>Event Policies</h1>
+<header>
+    <h1>Our Policies</h1>
+    <p class="subtitle">Everything you need to know before attending.</p>
+</header>
 
+<div class="container">
+
+<div class="policy">
 <h2>Tickets</h2>
-<p>Your ticket policy goes here.</p>
+<p>
+All tickets are non-refundable unless the event is cancelled. If tickets are transferable,
+instructions will be provided closer to the event date.
+</p>
+</div>
 
+<div class="policy">
 <h2>Accessibility</h2>
-<p>Your accessibility information goes here.</p>
+<p>
+Lost In Pages Events is committed to creating an inclusive and welcoming event.
+Accessibility information will be published once the venue has been confirmed.
+If you have specific requirements, please contact us before purchasing tickets.
+</p>
+</div>
 
+<div class="policy">
 <h2>Code of Conduct</h2>
-<p>Your code of conduct goes here.</p>
+<p>
+We want everyone to enjoy a safe, welcoming experience. Harassment, discrimination,
+bullying or inappropriate behaviour towards attendees, authors, vendors, volunteers
+or staff will not be tolerated and may result in removal from the event.
+</p>
+</div>
 
-<h2>Photography</h2>
-<p>Your photography policy goes here.</p>
+<div class="policy">
+<h2>Photography & Social Media</h2>
+<p>
+Photography and filming may take place throughout the event for promotional purposes.
+If you do not wish to appear in photographs, please speak to a member of staff on arrival.
+</p>
+</div>
 
-<a href="index.html" class="back">← Back to Home</a>
+<div class="policy">
+<h2>Children</h2>
+<p>
+Children under the age of 16 must be accompanied by a responsible adult at all times.
+</p>
+</div>
+
+<div class="policy">
+<h2>Contact</h2>
+<p>
+Questions about our policies? Contact us at
+<strong>lostinpagesevents@gmail.com</strong>.
+</p>
+</div>
+
+<a class="back" href="index.html">← Return to Home</a>
+
+</div>
+
+<footer>
+© 2026 Lost In Pages Events
+</footer>
 
 </body>
 </html>
