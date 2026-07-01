@@ -255,14 +255,22 @@ h2 {
     border-color: rgba(156,199,255,0.4);
 }
 
-.card h3 {
-    color: var(--midnight);
-    margin-bottom: 10px;
+.card {
+    background: var(--midnight); /* blue */
+    border: 1px solid rgba(156,199,255,0.25);
+    padding: 26px;
+    border-radius: 16px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    color: white; /* ensures text defaults to white */
 }
 
+.card h3,
 .card p {
-    color: #9932CC;
+    color: white;
 }
+
 
 footer {
     text-align: center;
