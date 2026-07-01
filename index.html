@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lost In Pages Events</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
 :root {
     --night: #483D8B;
@@ -23,12 +21,9 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+/* BASE FONT (everything default) */
 body {
-    font-family: 'Times New Roman', sans-serif;
+    font-family: "Times New Roman", Times, serif;
     color: var(--text);
     overflow-x: hidden;
     font-weight: 700;
@@ -126,15 +121,14 @@ header {
 }
 
 .hero h1 {
-    font-family: 'Great Vibes', cursive;
-
+    font-family: cursive;
     font-size: 6rem;
     color: var(--magic);
     text-shadow: 0 0 30px rgba(156,199,255,0.25);
 }
 
 p {
-    font-size:1.5rem;
+    font-size: 1.5rem;
     line-height: 1.6rem;
 }
 
@@ -183,10 +177,6 @@ section.show {
     transform: translateY(0);
 }
 
-section {
-    position: relative;
-}
-
 section::before {
     content: "· ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ ·";
     
@@ -214,7 +204,6 @@ section::before {
 h2 {
     text-align: center;
     font-weight: 700;
-    font-family: 'Playfair Display', serif;
     font-size: 2.4rem;
     margin-bottom: 25px;
 }
@@ -278,13 +267,13 @@ footer {
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-family: 'Great Vibes', cursive;
+        font-family: cursive;
         font-size: 2.5rem;
         color: #F8F8FF;
         text-shadow: 0 0 30px rgba(156, 199, 255, 0.25);
     }
-
 }
+
 @media (max-width: 768px) {
     header {
         overflow: hidden;
@@ -299,7 +288,6 @@ footer {
         left: 50%;
         transform: translateX(-50%);
     }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -366,10 +354,10 @@ footer {
             <p>Independent bookshops, creators, and bookish merch.</p>
         </div>
 
- <a href="Policies.html" class="card" style="text-decoration:none; color:inherit;">
-    <h3>Our Policies</h3>
-    <p>Everything you need to know before attending.</p>
-</a>
+        <a href="Policies.html" class="card" style="text-decoration:none; color:inherit;">
+            <h3>Our Policies</h3>
+            <p>Everything you need to know before attending.</p>
+        </a>
     </div>
 </section>
 
@@ -407,21 +395,7 @@ footer {
         </a>
     </p>
 </section>
-#contact p {
-    text-align: center;
-    color: white;
-}
 
-#contact a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-#contact a:hover {
-    color: #f8f8ff;
-    text-decoration: underline;
-}
 <footer>
     <p>&copy; 2026 Lost In Pages Events</p>
 </footer>
