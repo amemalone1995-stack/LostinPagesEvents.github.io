@@ -99,6 +99,23 @@ h1{
     line-height:1.8;
 }
 
+/* Make policy cards clickable */
+.policy-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.policy-link .policy{
+    transition:transform .25s ease, box-shadow .25s ease;
+    cursor:pointer;
+}
+
+.policy-link:hover .policy{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
 .back{
     display:inline-block;
     margin:40px auto;
