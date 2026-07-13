@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lost in Pages Tickets Policy </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --midnight:#4838DB;
+    --magic:#FFFFFF;
+    --accent:#9932CC;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:white;
+    background: var(--midnight);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* STAR LAYERS */
+#stars, #shooting-stars{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* STAR STYLE */
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:0.8;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+/* CONTENT ABOVE STARS */
+header, .container, footer{
+    position: relative;
+    z-index: 1;
+}
+
+header{
+    text-align:center;
+    padding:70px 20px;
+}
+
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:4rem;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#F8F8FF;
+}
+
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.policy{
+    background:white;
+    color:#9932CC;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:18px;
+    border:2px solid #9932CC;
+    box-shadow:0 0 20px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+.policy h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:15px;
+}
+
+.policy p{
+    line-height:1.8;
+}
+
+.back{
+    display:inline-block;
+    margin:40px auto;
+    padding:14px 30px;
+    background:white;
+    color:#483D8B;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+    transition:0.2s ease;
+}
+
+.back:hover{
+    transform:translateY(-2px);
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- STAR BACKGROUND LAYERS -->
+<div id="stars"></div>
+<div id="shooting-stars"></div>
+
+<header>
+    <h1>Our Policies</h1>
+    <p class="subtitle">Tickets and Attendance Policy
+
+‍Tickets, booking & payment
+
+Tickets are launching on the 1st August 2026.
+
+Standard Entry Ticket Price: £35
+Entry from 11.30am - 7pm.
+
+Accessibility Ticket Price: £35 
+Entry from 11.30am - 7pm
+Ticket includes one free carer ticket 
+Separate Entry Queue
+Video walkthrough of the venue
+Option to upgrade to VIP at a later date 
+More information can be found in our Accessibility Policy 
+
+VIP Ticket Price: £35
+Entry from 10am - 7pm
+Early Access to workshop tickets
+1x Craft Session
+Swag Bag with retail value over £50.
+
+Eventbrite
+Eventbrite offers a platform for us to create, manage and sell our event tickets. They are not the seller and we remain solely responsible for the event. Eventbrite will share your registrations data with us as the host. 
+
+Refunds and Transfers.
+
+Tickets are non-refundable, and the sale is final, except in situations as outlined below:
+
+In the unfortunate event that the organiser must cancel the event due to reasons within their control, it will first be proposed for a postponement to a later date.
+
+If the postponement date cannot be arranged, a refund will be provided. We are not responsible for any additional costs incurred by attendees including but not limited to travel, accommodation and parking. 
+
+If the event must be cancelled due to circumstances outside of our control, the organisers are not liable, such as Public Health, Emergencies, Venue Closure or Natural Disaster, full efforts will be made to re-schedule the event. All purchased tickets will remain valid. 
+
+
+Conduct
+
+We have a zero tolerance policy for abusive behaviour. This includes but is not limited to : Harassment, discrimination, verbal abuse, physical abuse or intimidation. 
+
+If these conditions are not met, it will result in immediate removal from the event. No refund will be provided in such an event. 
+
+Data Protection
+ 
+By consenting to these terms and conditions, you are providing consent for the organisers of the event to safely store your data for event management purposes. This includes promotional materials, contact details and correspondence. 
+
+Your direct contact details will not be shared outside of the event management team.
+
+By attending, you consent to photography and videography being used for promotional reasons. 
+
+Age Restrictions
+This is an 16+ event. Stalls have been requested to advise if their content is explicit to over 18’s.
+
+Liability & Responsibilities
+Attendees are responsible for conducting themselves according to the venues rules and regulations, including fire safety and emergency procedures. 
+
+The Event Organisers are not liable for the loss or theft of personal belongings. With this in mind, they will support in whichever way they can. 
+
+Each exhibitor will be encouraged to hold public liability insurance.
+
+Complaints and Compliments
+We will aim to respond to complaints and compliments received by email within 14 days. 
+
+<footer>
+© 2026 Lost In Pages Events
+</footer>
+
+<!-- STAR SCRIPT -->
+<script>
+const starContainer = document.getElementById("stars");
+
+function createStars(count) {
+    for (let i = 0; i < count; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+
+        const size = Math.random() * 2 + 1;
+
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+
+        star.style.opacity = Math.random();
+
+        starContainer.appendChild(star);
+    }
+}
+
+createStars(180);
+</script>
+
+</body>
+</html>
