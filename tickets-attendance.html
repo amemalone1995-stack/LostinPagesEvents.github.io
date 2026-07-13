@@ -6,7 +6,74 @@
 </a>
 
 <body>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
+<style>
+:root{
+    --midnight:#4838DB;
+    --magic:#FFFFFF;
+    --accent:#9932CC;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:white;
+    background: var(--midnight);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* STAR LAYERS */
+#stars, #shooting-stars{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* STAR STYLE */
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:0.8;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+/* CONTENT ABOVE STARS */
+header, .container, footer{
+    position: relative;
+    z-index: 1;
+}
+
+header{
+    text-align:center;
+    padding:70px 20px;
+}
+
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:4rem;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#F8F8FF;
+}
+    
 <div id="stars"></div>
 <div id="shooting-stars"></div>
 
