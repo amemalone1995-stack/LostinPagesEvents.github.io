@@ -193,11 +193,33 @@ h1{
 </div>
 
 <footer>
-    &copy; 2026 Lost In Pages Events
+© 2026 Lost In Pages Events
 </footer>
 
+<!-- STAR SCRIPT -->
 <script>
-    // Your star script
+const starContainer = document.getElementById("stars");
+
+function createStars(count) {
+    for (let i = 0; i < count; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+
+        const size = Math.random() * 2 + 1;
+
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+
+        star.style.opacity = Math.random();
+
+        starContainer.appendChild(star);
+    }
+}
+
+createStars(180);
 </script>
 
 </body>
