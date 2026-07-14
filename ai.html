@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Policies | Lost In Pages Events</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --midnight:#4838DB;
+    --white:#FFFFFF;
+    --glass:rgba(255,255,255,0.12);
+    --border:rgba(255,255,255,0.35);
+}
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* PAGE */
+
+body{
+    font-family:'Inter', sans-serif;
+    background:var(--midnight);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+
+/* STAR BACKGROUND */
+
+#stars,
+#shooting-stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+
+.star{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+
+/* CONTENT LAYER */
+
+header,
+.container,
+footer{
+    position:relative;
+    z-index:2;
+}
+
+
+/* HEADER */
+
+header{
+    text-align:center;
+    padding:70px 20px 40px;
+}
+
+
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:4rem;
+    color:white;
+    margin-bottom:15px;
+}
+
+
+.subtitle{
+    font-size:1.2rem;
+}
+
+
+/* POLICY CONTAINER */
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding-bottom:50px;
+}
+
+
+/* POLICY BOXES */
+
+.policy{
+    background:var(--glass);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:25px;
+    margin:25px 0;
+    color:white;
+    position:relative;
+    z-index:3;
+    backdrop-filter:blur(8px);
+}
+
+
+.policy h2{
+    font-family:'Playfair Display', serif;
+    font-size:1.8rem;
+    color:white;
+    margin-bottom:15px;
+}
+
+
+.policy p{
+    color:white;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+
+.policy strong{
+    color:white;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:white;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    h1{
+        font-size:3rem;
+    }
+
+    .policy{
+        padding:20px;
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="stars"></div>
+<div id="shooting-stars"></div>
+
+
+<header>
+
+<h1>AI Policies</h1>
+
+<p class="subtitle">
+Say No to AI 
+</p>
+
+</header>
+
+
+
+<div class="container">
+
+
+<div class="policy">
+
+<h2>Our Stance </h2>
+
+<p>
+
+As bookish artists ourselves, we value art lead with human creativity, love and soul above all else. 
+We have a very clear view that generative AI has no place in our community. 
+This includes but is not limited too: 
+  <p> Character Art</p>
+  <p> Book Covers </p>
+  <p> Logos </p>
+  <p> Marketing </p>
+  <p> Products made with generative AI images </p>
+  
+</p>
+
+
+</p>
+
+
+</div>
+
+
+
+<div class="policy">
+
+<h2>The Vendors and Authors </h2>
+
+<p>
+We will never knowingly accept an Author or Vendor at our event who uses generative AI in any part of their work.
+Each application is carely considered and anyone found to be using generative AI will not be accepted.
+</p>
+
+</div>
+
+
+
+<div class="policy">
+
+<h2>Why it Matters</h2>
+
+<p>
+Years of practice, years of of training, years of research. 
+Authors and Artists alike put their tears, heart and soul into their creations.
+<p> AI creates a space for plagerism, style theft and devalues the years of practice and refinement undertaken.</p>
+<p> AI is leaving a heavy footprint on the world we also walk on.</p>
+</p>
+
+</div>
+
+
+    
+
+</div>
+</div>
+
+<a class="back" href="index.html">← Return to Home</a>
+
+
+</div>
+
+
+
+<footer>
+
+© 2026 Lost In Pages Events
+
+</footer>
+
+
+
+
+<script>
+
+const starContainer = document.getElementById("stars");
+
+
+function createStars(count){
+
+    for(let i = 0; i < count; i++){
+
+        const star = document.createElement("div");
+
+        star.className = "star";
+
+
+        const size = Math.random() * 3 + 1;
+
+
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+
+        star.style.animationDelay = Math.random() * 3 + "s";
+
+
+        starContainer.appendChild(star);
+
+    }
+
+}
+
+
+createStars(180);
+
+
+</script>
+
+
+</body>
+</html>
