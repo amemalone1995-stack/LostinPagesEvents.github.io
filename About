@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Lost In Pages Events</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --midnight:#4838DB;
+    --white:#FFFFFF;
+    --glass:rgba(255,255,255,0.12);
+    --border:rgba(255,255,255,0.35);
+}
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* PAGE */
+
+body{
+    font-family:'Inter', sans-serif;
+    background:var(--midnight);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+
+/* STAR BACKGROUND */
+
+#stars,
+#shooting-stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+
+.star{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+
+/* CONTENT LAYER */
+
+header,
+.container,
+footer{
+    position:relative;
+    z-index:2;
+}
+
+
+/* HEADER */
+
+header{
+    text-align:center;
+    padding:70px 20px 40px;
+}
+
+
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:4rem;
+    color:white;
+    margin-bottom:15px;
+}
+
+
+.subtitle{
+    font-size:1.2rem;
+}
+
+
+/* POLICY CONTAINER */
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding-bottom:50px;
+}
+
+
+/* POLICY BOXES */
+
+.policy{
+    background:var(--glass);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:25px;
+    margin:25px 0;
+    color:white;
+    position:relative;
+    z-index:3;
+    backdrop-filter:blur(8px);
+}
+
+
+.policy h2{
+    font-family:'Playfair Display', serif;
+    font-size:1.8rem;
+    color:white;
+    margin-bottom:15px;
+}
+
+
+.policy p{
+    color:white;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+
+.policy strong{
+    color:white;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:white;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    h1{
+        font-size:3rem;
+    }
+
+    .policy{
+        padding:20px;
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="stars"></div>
+<div id="shooting-stars"></div>
+
+
+<header>
+
+<h1>About</h1>
+
+<p class="subtitle">
+Event Details and a Bit About Us
+</p>
+
+</header>
+
+
+
+<div class="container">
+
+
+<div class="about">
+
+<h2>Tickets, Booking & Payment</h2>
+
+<p>
+<strong>Tickets launch on 1 August 2026.</strong>
+</p>
+
+<p>
+<strong>Standard Entry – £35</strong><br>
+Entry from 11:30am–7:00pm.
+</p>
+
+
+<p>
+<strong>Accessibility Ticket – £35</strong><br>
+Entry from 11:30am–7:00pm<br>
+• One free carer ticket<br>
+• Separate entry queue<br>
+• Video walkthrough of the venue<br>
+• Option to upgrade to VIP later<br>
+See our Accessibility Policy for more information.
+</p>
+
+
+<p>
+<strong>VIP Ticket – £35</strong><br>
+Entry from 10:00am–7:00pm<br>
+• Early workshop booking<br>
+• One craft session<br>
+• Swag bag (retail value over £50)
+</p>
+
+
+</div>
+
+
+
+<div class="policy">
+
+<h2>Eventbrite</h2>
+
+<p>
+Eventbrite provides the ticketing platform for our event.
+They are not the seller of tickets. Lost in Pages Events
+remains responsible for the event itself. Eventbrite shares
+your registration details with us for event management.
+</p>
+
+</div>
+
+
+
+<div class="policy">
+
+<h2>Refunds & Transfers</h2>
+
+<p>
+Tickets are non-refundable unless the event is cancelled by the organisers.
+</p>
+
+<p>
+If the event is postponed, tickets will automatically transfer to the new date.
+</p>
+
+<p>
+If a replacement date cannot be arranged, a refund will be issued.
+</p>
+
+<p>
+We are not responsible for travel, accommodation, parking or other expenses.
+</p>
+
+<p>
+If cancellation occurs due to circumstances beyond our control,
+tickets remain valid for the rescheduled event.
+</p>
+
+</div>
+
+
+
+<div class="policy">
+
+<h2>Conduct</h2>
+
+<p>
+We operate a zero-tolerance policy towards harassment,
+discrimination, verbal abuse, physical abuse or intimidation.
+Anyone removed from the event for unacceptable behaviour
+will not receive a refund.
+</p>
+
+</div>
+
+
+
+<div class="policy">
+
+<h2>Data Protection</h2>
+
+<p>
+By purchasing a ticket you consent to us securely storing your
+information for event administration, correspondence and
+promotional communications.
+</p>
+
+<p>
+Your direct contact details will never be shared outside the event management team.
+</p>
+
+<p>
+Attendance grants permission for photography and videography
+to be used for promotional purposes.
+</p>
+
+</div>
+
+
+
+<div class="policy">
+
+<h2>Age Restrictions</h2>
+
+<p>
+This is a 16+ event.
+Vendors have been asked to clearly identify any 18+ content.
+</p>
+
+</div>
+
+
+
+<div class="policy">
+
+<h2>Liability & Responsibilities</h2>
+
+<p>
+Guests are responsible for following venue rules,
+fire safety procedures and emergency instructions.
+</p>
+
+<p>
+Lost in Pages Events cannot accept responsibility for lost
+or stolen belongings, although we will assist wherever possible.
+</p>
+
+<p>
+All exhibitors are encouraged to hold Public Liability Insurance.
+</p>
+
+</div>
+
+
+
+<div class="policy">
+
+<h2>Complaints & Compliments</h2>
+
+<p>
+We aim to respond to all complaints and compliments received
+by email within 14 days.
+</p>
+
+</div>
+
+<a class="back" href="index.html">← Return to Home</a>
+    
+</div>
+
+
+
+<footer>
+
+© 2026 Lost In Pages Events
+
+</footer>
+
+
+
+
+<script>
+
+const starContainer = document.getElementById("stars");
+
+
+function createStars(count){
+
+    for(let i = 0; i < count; i++){
+
+        const star = document.createElement("div");
+
+        star.className = "star";
+
+
+        const size = Math.random() * 3 + 1;
+
+
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+
+        star.style.animationDelay = Math.random() * 3 + "s";
+
+
+        starContainer.appendChild(star);
+
+    }
+
+}
+
+
+createStars(180);
+
+
+</script>
+
+
+</body>
+</html>
