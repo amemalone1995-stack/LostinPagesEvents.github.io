@@ -144,6 +144,38 @@ h1{
     color:white;
 }
 
+    .policy summary{
+    font-family:'Playfair Display', serif;
+    font-size:1.8rem;
+    color:white;
+    cursor:pointer;
+    list-style:none;
+    font-weight:600;
+}
+
+.policy summary::-webkit-details-marker{
+    display:none;
+}
+
+.policy summary::after{
+    content:"+";
+    float:right;
+    font-size:1.6rem;
+    transition:0.3s;
+}
+
+.policy[open] summary::after{
+    content:"−";
+}
+
+.policy summary{
+    margin-bottom:0;
+}
+
+.policy[open] summary{
+    margin-bottom:15px;
+}
+
 
 /* FOOTER */
 
@@ -242,40 +274,73 @@ Author signings and Meet and Greets.
 </div>
 
 
+<details class="policy">
+    <summary>Conduct</summary>
 
-<div class="policy">
+    <p>
+        We operate a zero-tolerance policy towards harassment,
+        discrimination, verbal abuse, physical abuse or intimidation.
+        Anyone removed from the event for unacceptable behaviour
+        will not receive a refund.
+    </p>
+</details>
 
-<h2>Conduct</h2>
+<details class="policy">
+    <summary>Data Protection</summary>
 
-<p>
-We operate a zero-tolerance policy towards harassment,
-discrimination, verbal abuse, physical abuse or intimidation.
-Anyone removed from the event for unacceptable behaviour
-will not receive a refund.
-</p>
+    <p>
+        By purchasing a ticket you consent to us securely storing your
+        information for event administration, correspondence and
+        promotional communications.
+    </p>
 
-</div>
+    <p>
+        Your direct contact details will never be shared outside the event management team.
+    </p>
+
+    <p>
+        Attendance grants permission for photography and videography
+        to be used for promotional purposes.
+    </p>
+</details>
+
+<details class="policy">
+    <summary>Age Restrictions</summary>
+
+    <p>
+        This is a 16+ event.
+        Vendors have been asked to clearly identify any 18+ content.
+    </p>
+</details>
+
+<details class="policy">
+    <summary>Liability & Responsibilities</summary>
+
+    <p>
+        Guests are responsible for following venue rules,
+        fire safety procedures and emergency instructions.
+    </p>
+
+    <p>
+        Lost in Pages Events cannot accept responsibility for lost
+        or stolen belongings, although we will assist wherever possible.
+    </p>
+
+    <p>
+        All exhibitors are encouraged to hold Public Liability Insurance.
+    </p>
+</details>
+
+<details class="policy">
+    <summary>Complaints & Compliments</summary>
+
+    <p>
+        We aim to respond to all complaints and compliments received
+        by email within 14 days.
+    </p>
+</details>
 
 
-
-<div class="policy">
-
-<h2>Data Protection</h2>
-
-<p>
-By purchasing a ticket you consent to us securely storing your
-information for event administration, correspondence and
-promotional communications.
-</p>
-
-<p>
-Your direct contact details will never be shared outside the event management team.
-</p>
-
-<p>
-Attendance grants permission for photography and videography
-to be used for promotional purposes.
-</p>
 
 </div>
 
