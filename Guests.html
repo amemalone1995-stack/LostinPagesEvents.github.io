@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Lost In Pages Events</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --midnight:#4838DB;
+    --white:#FFFFFF;
+    --glass:rgba(255,255,255,0.12);
+    --border:rgba(255,255,255,0.35);
+}
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* PAGE */
+
+body{
+    font-family:'Inter', sans-serif;
+    background:var(--midnight);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+
+/* STAR BACKGROUND */
+
+#stars,
+#shooting-stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+
+.star{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+
+/* CONTENT LAYER */
+
+header,
+.container,
+footer{
+    position:relative;
+    z-index:2;
+}
+
+
+/* HEADER */
+
+header{
+    text-align:center;
+    padding:70px 20px 40px;
+}
+
+
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:4rem;
+    color:white;
+    margin-bottom:15px;
+}
+
+
+.subtitle{
+    font-size:1.2rem;
+}
+
+
+/* GUEST CONTAINER */
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding-bottom:50px;
+}
+
+
+/* GUEST BOXES */
+
+.policy{
+    background:var(--glass);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:25px;
+    margin:25px 0;
+    color:white;
+    position:relative;
+    z-index:3;
+    backdrop-filter:blur(8px);
+}
+
+
+.policy h2{
+    font-family:'Playfair Display', serif;
+    font-size:1.8rem;
+    color:white;
+    margin-bottom:15px;
+}
+
+
+.policy p{
+    color:white;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+
+.policy strong{
+    color:white;
+}
+
+    .policy summary{
+    font-family:'Playfair Display', serif;
+    font-size:1.8rem;
+    color:white;
+    cursor:pointer;
+    list-style:none;
+    font-weight:600;
+}
+
+.policy summary::-webkit-details-marker{
+    display:none;
+}
+
+.policy summary::after{
+    content:"+";
+    float:right;
+    font-size:1.6rem;
+    transition:0.3s;
+}
+
+.policy[open] summary::after{
+    content:"−";
+}
+
+.policy summary{
+    margin-bottom:0;
+}
+
+.policy[open] summary{
+    margin-bottom:15px;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:white;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    h1{
+        font-size:3rem;
+    }
+
+    .policy{
+        padding:20px;
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="stars"></div>
+<div id="shooting-stars"></div>
+
+
+<header>
+
+<h1>Our Guests</h1>
+
+<p class="subtitle">
+Authors, Vendors, Narrators and Hosts
+</p>
+
+</header>
+
+
+
+<div class="container">
+
+
+<div class="about">
+
+
+
+<div class="policy">
+
+<h2>Abit about the Organisers</h2>
+
+<p>
+Oh. Hi there! You didnt think we wouldnt introduce ourselves did you?
+<p>We are a duo of bookish creatives, Amy at Malone Designs and Jay at Krorroskos Designs, and together we are bringing you Lost in Pages Events. </p>
+<p>If you are finding us or reaching out on socials, you are likely speaking to the teams social media genius Jay. Amy is probably busy playing with spreadsheets or working on this (soon to be) beautiful website.  </p>
+<p>What started as a passing conversation, has quickly materialised into a signed contract and daily pinch me "Are we doing this?" moments. </p>
+</p>
+
+</div>
+
+
+
+
+</div>
+
+<a class="back" href="index.html">← Return to Home</a>
+    
+</div>
+
+
+
+<footer>
+
+© 2026 Lost In Pages Events
+
+</footer>
+
+
+
+
+<script>
+
+const starContainer = document.getElementById("stars");
+
+
+function createStars(count){
+
+    for(let i = 0; i < count; i++){
+
+        const star = document.createElement("div");
+
+        star.className = "star";
+
+
+        const size = Math.random() * 3 + 1;
+
+
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+
+        star.style.animationDelay = Math.random() * 3 + "s";
+
+
+        starContainer.appendChild(star);
+
+    }
+
+}
+
+
+createStars(180);
+
+
+</script>
+
+
+</body>
+</html>
