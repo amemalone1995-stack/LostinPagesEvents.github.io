@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>25th September 2027</title>
+
+<title>September 25th 2027 | Lost In Pages Events</title>
 
 <style>
+
 :root {
     --night: #191970;
     --magic: #FFFFFF;
@@ -14,185 +16,350 @@
     --muted: #FFFFFF;
 }
 
+
 /* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BASE FONT (everything default) */
+
+/* BASE */
+
 body {
+
     font-family: "Times New Roman", Times, serif;
+
     color: var(--text);
-    overflow-x: hidden;
-    font-weight: 700;
+
+    overflow-x:hidden;
+
+    font-weight:700;
 
     background:
-        linear-gradient(180deg, rgba(7,12,24,0.86), rgba(7,12,24,0.96)),
+        linear-gradient(
+            180deg,
+            rgba(7,12,24,0.86),
+            rgba(7,12,24,0.96)
+        ),
         url("background.jpg") center/cover fixed no-repeat;
 }
 
+
 /* 🌠 FLOATING STARS */
+
 .stars {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background: #191970 ;
-    overflow: hidden;
-    z-index: 0;
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:#191970;
+
+    overflow:hidden;
+
+    z-index:0;
 }
+
 
 .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    opacity: 0.4;
-    border-radius: 50%;
-    animation: floatStar linear infinite;
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    background:white;
+
+    opacity:0.4;
+
+    border-radius:50%;
+
+    animation:floatStar linear infinite;
+
 }
+
 
 @keyframes floatStar {
+
     from {
-        transform: translateY(0);
-        opacity: 0.2;
+
+        transform:translateY(0);
+
+        opacity:0.2;
+
     }
+
     to {
-        transform: translateY(-100vh);
-        opacity: 0.8;
+
+        transform:translateY(-100vh);
+
+        opacity:0.8;
+
     }
+
 }
 
-/* NAV */
+
+
+/* NAVIGATION */
+
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: var(--midnight);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:var(--midnight);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+
 }
+
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 26px;
-    list-style: none;
-    padding: 14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:26px;
+
+    list-style:none;
+
+    padding:14px;
+
 }
+
 
 nav a {
-    color: var(--text);
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: 0.3s;
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    letter-spacing:1px;
+
+    font-size:
+        clamp(0.9rem,1.5vw,1.1rem);
+
+    transition:0.3s;
+
 }
+
 
 nav a:hover {
-    color: var(--midnight);
+
+    color:var(--night);
+
 }
 
-/* HERO */
-
-
-/* HERO */
-
-.hero {
-    text-align: center;
-    padding: 0 20px;
-}
-
-/* MAIN TITLE */
-.hero h1 {
-    font-family: "Great Vibes", cursive;
-    font-size: clamp(3rem, 8vw, 7rem);
-    color: var(--magic);
-    line-height: 1.1;
-    margin-bottom: 20px;
-    text-shadow: 0 0 30px rgba(156,199,255,0.25);
-}
-
-/* VENUE TITLE */
-.hero h2 {
-    font-size: clamp(1.5rem, 3vw, 2.8rem);
-    margin-bottom: 25px;
-    line-height: 1.3;
-}
-
-/* HERO TEXT */
-.hero p {
-    color: var(--muted);
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    line-height: 1.7;
-    margin: 12px auto;
-    max-width: 900px;
-}
-
-/* ICONS */
-.hero span {
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-}
 
 
 /* HEADER */
 
 header {
-    text-align: center;
-    padding: 20px 20px 80px;
-    position: relative;
-    z-index: 1;
 
-    background: radial-gradient(circle at top,
-        rgba(156,199,255,0.18),
-        transparent 60%);
+    text-align:center;
+
+    padding:
+        20px
+        clamp(20px,5vw,60px)
+        80px;
+
+    position:relative;
+
+    z-index:1;
+
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(156,199,255,0.18),
+            transparent 60%
+        );
+
 }
+
 
 
 /* LOGO */
 
+
 .logo {
+
     display:block;
-    width: min(90%, 900px);
+
+    width:min(90%,900px);
+
     height:auto;
-    margin:0 auto 35px;
 
-    filter: drop-shadow(0 0 18px rgba(156,199,255,0.35));
+    margin:
+        0 auto 35px;
 
-    border:3px solid rgba(156,199,255,0.7);
+    filter:
+        drop-shadow(
+            0 0 18px rgba(156,199,255,0.35)
+        );
+
+
+    border:
+        3px solid rgba(156,199,255,0.7);
+
+
     border-radius:16px;
 
+
     box-shadow:
+
         0 0 12px rgba(156,199,255,0.4),
+
         0 0 30px rgba(156,199,255,0.2);
+
 }
+
+
+
+/* HERO */
+
+
+.hero {
+
+    text-align:center;
+
+}
+
+
+/* MAIN DATE TITLE */
+
+.hero h1 {
+
+    font-family:"Great Vibes", cursive;
+
+    font-size:
+        clamp(3rem,8vw,7rem);
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+    color:var(--magic);
+
+    text-shadow:
+        0 0 30px rgba(156,199,255,0.25);
+
+}
+
+
+
+/* VENUE */
+
+.hero h2 {
+
+    font-size:
+        clamp(1.5rem,3vw,2.8rem);
+
+    line-height:1.3;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* HERO TEXT */
+
+
+.hero p {
+
+    color:var(--muted);
+
+    font-size:
+        clamp(1.05rem,2vw,1.5rem);
+
+    line-height:1.7;
+
+    margin:
+        12px auto;
+
+    max-width:900px;
+
+}
+
+
+
+.hero span {
+
+    font-size:
+        clamp(1.2rem,2vw,1.8rem);
+
+}
+
 
 
 /* BUTTONS */
 
+
 .btn {
+
     display:inline-block;
+
     margin-top:22px;
-    padding:18px 35px;
+
+    padding:
+        clamp(15px,2vw,22px)
+        clamp(25px,4vw,40px);
+
 
     background:var(--magic);
+
     color:var(--night);
+
 
     border-radius:10px;
 
-    font-size:clamp(1rem,2vw,1.3rem);
+
+    font-size:
+        clamp(1rem,2vw,1.3rem);
+
+
     font-weight:700;
 
+
     text-decoration:none;
+
 
     box-shadow:
         0 0 25px rgba(156,199,255,0.25);
 
+
     transition:0.3s;
+
 }
 
 
+.btn:hover {
+
+    transform:translateY(-3px);
+
+}
+
+
+
 /* SECTIONS */
+
 
 section {
 
@@ -200,450 +367,668 @@ section {
 
     position:relative;
 
+
     width:90%;
+
     max-width:1100px;
 
-    margin:80px auto;
+
+    margin:
+        80px auto;
+
 
     padding:
         clamp(50px,7vw,80px)
         clamp(20px,5vw,50px);
 
+
     background:white;
+
 
     border:
         2px solid var(--night);
 
+
+    color:var(--night);
+
+
     border-radius:18px;
 
+
     opacity:0;
+
     transform:translateY(40px);
+
 
     transition:
         opacity 1s ease,
         transform 1s ease;
+
 }
+
 
 
 section.show {
+
     opacity:1;
+
     transform:translateY(0);
+
 }
 
 
-/* STAR DECORATION */
+
+/* DECORATIVE STARS */
+
 
 section::before {
 
     content:
     "· ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ ·";
 
+
     position:absolute;
 
+
     top:0;
+
     left:50%;
 
-    transform:translate(-50%,-50%);
+
+    transform:
+        translate(-50%,-50%);
+
 
     background:var(--midnight);
 
+
     color:white;
 
+
     padding:
-    0.35rem 1rem;
+        0.35rem 1rem;
+
 
     white-space:nowrap;
 
+
     font-size:
-    clamp(.7rem,1.5vw,.9rem);
+        clamp(.7rem,1.5vw,.9rem);
+
 
     border-radius:999px;
+
 }
 
 
-/* HEADINGS */
+
+/* SECTION HEADINGS */
+
 
 h2 {
 
+    text-align:center;
+
     font-size:
-    clamp(1.8rem,4vw,3rem);
+        clamp(1.8rem,4vw,3rem);
 
     margin-bottom:25px;
-
-    line-height:1.2;
 
 }
 
 
-/* BODY TEXT */
+
+/* SECTION TEXT */
+
 
 section p {
 
     font-size:
-    clamp(1rem,2vw,1.4rem);
+        clamp(1rem,2vw,1.4rem);
+
 
     line-height:1.7;
+
 
     margin-bottom:15px;
 
 }
 
 
+
 /* CARDS */
+
 
 .grid {
 
     display:grid;
 
+
     grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
+        repeat(auto-fit,minmax(240px,1fr));
+
 
     gap:25px;
 
 }
 
 
+
 .card {
 
     background:var(--midnight);
 
+
     padding:
-    clamp(20px,4vw,35px);
+        clamp(20px,4vw,35px);
+
 
     border-radius:16px;
+
+
+    transition:0.4s;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
 
     color:white;
 
 }
 
 
+
+.card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
 .card h3 {
 
     font-size:
-    clamp(1.2rem,2.5vw,1.8rem);
+        clamp(1.2rem,2.5vw,1.8rem);
 
     margin-bottom:15px;
 
 }
 
 
+
 .card p {
 
     color:white;
 
     font-size:
-    clamp(1rem,2vw,1.2rem);
+        clamp(1rem,2vw,1.2rem);
 
 }
 
 
-/* MOBILE NAV */
 
-@media(max-width:700px){
-
-nav ul {
-
-    gap:12px;
-
-    padding:12px;
-
-    flex-wrap:wrap;
-
-}
-
-nav a {
-
-    font-size:.9rem;
-
-}
-
-
-header {
-
-    padding-bottom:50px;
-
-}
-
-
-.logo {
-
-    width:100%;
-
-}
-
-
-}
-/* TITLES */
-h2 {
-    text-align: center;
-    font-weight: 700;
-    font-size: 2.4rem;
-    margin-bottom: 25px;
-}
-
-/* TEXT */
-.about p,
-.contact p {
-    text-align: center;
-    color: var(--muted);
-    font-size: 1.4rem;
-    font-weight:700;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
-}
-
-.card {
-    background: var(--magic);
-    border: 1px solid rgba(156,199,255,0.12);
-    padding: 26px;
-    border-radius: 16px;
-    transition: 0.4s;
-    position: relative;
-    overflow: hidden;
-}
-
-.card::after {
-    content: "";
-    position: absolute;
-    top: -60%;
-    left: -70%;
-    width: 60%;
-    height: 200%;
-    background: linear-gradient(90deg, transparent, rgba(156,199,255,0.12), transparent);
-    transform: rotate(25deg);
-    transition: 0.6s;
-}
-
-.card:hover::after {
-    left: 120%;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(156,199,255,0.4);
-}
-
-.card {
-    background: var(--midnight); /* blue */
-    border: 1px solid rgba(156,199,255,0.25);
-    padding: 26px;
-    border-radius: 16px;
-    transition: 0.4s;
-    position: relative;
-    overflow: hidden;
-    color: white; /* ensures text defaults to white */
-}
-
-.card h3,
-.card p {
-    color: white;
-}
+/* FOOTER */
 
 
 footer {
-    text-align: center;
-    padding: 30px;
-    color: var(--muted);
+
+    text-align:center;
+
+    padding:30px;
+
+    color:var(--muted);
+
 }
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-family: cursive;
-        font-size: 2.5rem;
-        color: #F8F8FF;
-        text-shadow: 0 0 30px rgba(156, 199, 255, 0.25);
+
+
+/* MOBILE ADJUSTMENTS */
+
+
+@media(max-width:700px){
+
+
+    nav ul {
+
+        gap:12px;
+
     }
-}
 
-@media (max-width: 768px) {
+
     header {
-        overflow: hidden;
+
+        padding-bottom:50px;
+
     }
+
 
     .logo {
-        display: block;
-        width: 120%;
-        max-width: none;
-        margin: 0;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+
+        width:100%;
+
     }
+
+
 }
 
-@media (prefers-reduced-motion: reduce) {
+
+
+/* REDUCE MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
     section {
-        transition: none;
-        opacity: 1;
-        transform: none;
+
+        transition:none;
+
+        opacity:1;
+
+        transform:none;
+
     }
+
 
     .star {
-        animation: none;
+
+        animation:none;
+
     }
+
 }
+
+
 </style>
+
 </head>
 
 <body>
 
 <div class="stars" id="stars"></div>
 
+
 <nav>
+
     <ul>
+
         <li><a href="#about">About</a></li>
+
         <li><a href="#event">Event</a></li>
+
         <li><a href="#newsletter">Newsletter</a></li>
+
         <li><a href="#contact">Contact</a></li>
+
     </ul>
+
 </nav>
 
+
+
 <header>
+
+
     <img src="Facebook Cover.png" class="logo" alt="Logo">
 
+
     <div class="hero">
+
+
         <h1>September 25th 2027</h1>
-        
+
+
         <h2>Brighton Hilton Metropole</h2>
 
-        <p>We heard the bookish community loud and clear.</p>
-        
-        <p>We are bringing a fiction book event to the South Coast.</p>
-        
+
+
         <p>
-            
-    <span>📅</span> 25 September 2027
-    </p>
+            We heard the bookish community loud and clear.
+        </p>
 
-    <p>
-    <span>🕒</span> Doors open: 10:00 AM
-    </p>
 
-    <p>
-    <span>📍</span> Brighton Hilton Metropole, Brighton
-</p>  
-        
-        <p></p>
+        <p>
+            We are bringing a fiction book event to the South Coast.
+        </p>
 
-        <a href="https://www.eventbrite.co.uk/e/lost-in-pages-brightons-newest-book-event-tickets-1992957687091?utm_experiment=test_share_listing&aff=ebdsshios&sg=f85606848e1d295860e7303a016f1e3bd4de5b39f76db082bb221ff8005ed2113809f6419407b0cc4c11094717f557bc4c7b17e6ae2e0d27d760214a00aef84d4b33c8b72dee2f256543bce8dd98" class="btn" target="_blank" rel="noopener noreferrer">
-    Purchase Tickets
-</a>
 
-<br>
 
-<a href="#event" class="btn">Discover More</a>
+        <p>
+            <span>📅</span> 25 September 2027
+        </p>
+
+
+        <p>
+            <span>🕒</span> Doors open: 10:00 AM
+        </p>
+
+
+        <p>
+            <span>📍</span> Brighton Hilton Metropole, Brighton
+        </p>
+
+
+
+        <a href="https://www.eventbrite.co.uk/e/lost-in-pages-brightons-newest-book-event-tickets-1992957687091?utm_experiment=test_share_listing&aff=ebdsshios&sg=f85606848e1d295860e7303a016f1e3bd4de5b39f76db082bb221ff8005ed2113809f6419407b0cc4c11094717f557bc4c7b17e6ae2e0d27d760214a00aef84d4b33c8b72dee2f256543bce8dd98" 
+        class="btn" 
+        target="_blank" 
+        rel="noopener noreferrer">
+
+            Purchase Tickets
+
+        </a>
+
+
+        <br>
+
+
+        <a href="#event" class="btn">
+
+            Discover More
+
+        </a>
+
+
 
     </div>
+
+
 </header>
 
+
+
+
+
 <section id="about">
+
+
     <h2>About Lost in Pages</h2>
+
 
     <p>
         Lost In Pages Events is created by two bookish artists with a dream of bringing magical
         book event to life on the South Coast.
     </p>
-    <p> Leading with transparency of our vision and values, we are creating an event for the community</p>
-    <p> Bringing a world of fiction together in one place, alongside crafts, Q&A's, signing, shopping and more</p>
+
+
+    <p>
+        Leading with transparency of our vision and values, we are creating an event for the community
+    </p>
+
+
+    <p>
+        Bringing a world of fiction together in one place, alongside crafts, Q&A's, signing, shopping and more
+    </p>
+
+
 </section>
 
 
-    <section id="event">
+
+
+
+
+<section id="event">
+
+
     <h2>Brighton Book Event 2027</h2>
+
+
 
     <div class="grid">
 
+
+
         <a href="about.html" class="card" style="text-decoration:none; color:inherit;">
-            <h3>About Us & Our Event</h3>
-            <p>Frequently Asked Questions and General Information</p>
+
+
+            <h3>
+                About Us & Our Event
+            </h3>
+
+
+            <p>
+                Frequently Asked Questions and General Information
+            </p>
+
+
         </a>
+
+
+
 
         <a href="Guests.html" class="card" style="text-decoration:none; color:inherit;">
-            <h3>Our Authors, Vendors & Narrators</h3>
-            <p>Independent bookshops, Authors, Narrators, Hosts and bookish merch.</p>
+
+
+            <h3>
+                Our Authors, Vendors & Narrators
+            </h3>
+
+
+            <p>
+                Independent bookshops, Authors, Narrators, Hosts and bookish merch.
+            </p>
+
+
         </a>
+
+
+
 
         <a href="Policies.html" class="card" style="text-decoration:none; color:inherit;">
-            <h3>Our Policies</h3>
-            <p>Everything you need to know before attending.</p>
+
+
+            <h3>
+                Our Policies
+            </h3>
+
+
+            <p>
+                Everything you need to know before attending.
+            </p>
+
+
         </a>
 
+
+
     </div>
+
+
 </section>
+
+
+
+
+
 
 
 <section id="newsletter">
+
+
     <h2>Join Our Newsletter</h2>
 
-    <p style="text-align:center; color: var(--muted);">
+
+
+    <p>
         Be the first to hear about tickets and updates.
     </p>
 
+
+
+
     <iframe
+
         src="https://docs.google.com/forms/d/e/1FAIpQLSfaoxTG4EFEg1JrciLuYrGdon9V8X9vvr7cZRnm9fXDVitEPQ/viewform?embedded=true"
+
         width="100%"
+
         height="220"
+
         style="border:none; margin-top:20px;">
+
     </iframe>
+
+
+
 </section>
+
+
+
+
+
+
 
 <section id="contact">
+
+
     <h2>Contact Us</h2>
 
-    <p>Email: lostinpagesevents@gmail.com</p>
+
 
     <p>
+        Email: lostinpagesevents@gmail.com
+    </p>
+
+
+
+    <p>
+
         Instagram:
-        <a href="https://instagram.com/lostinpagesevents" target="_blank" rel="noopener noreferrer">
+
+        <a href="https://instagram.com/lostinpagesevents"
+           target="_blank"
+           rel="noopener noreferrer">
+
             @lostinpagesevents
+
         </a>
+
     </p>
 
+
+
+
     <p>
+
         TikTok:
-        <a href="https://tiktok.com/@lostinpagesevent" target="_blank" rel="noopener noreferrer">
+
+        <a href="https://tiktok.com/@lostinpagesevent"
+           target="_blank"
+           rel="noopener noreferrer">
+
             @lostinpagesevent
+
         </a>
+
     </p>
+
+
+
 </section>
 
+
+
+
+
+
+
 <footer>
-    <p>&copy; 2026 Lost In Pages Events</p>
+
+    <p>
+        &copy; 2026 Lost In Pages Events
+    </p>
+
 </footer>
 
+
+
+
+
+
+
 <script>
+
+
 const stars = document.getElementById("stars");
 
+
+
 for (let i = 0; i < 60; i++) {
+
+
     const s = document.createElement("div");
+
+
     s.classList.add("star");
 
+
+
     s.style.left = Math.random() * 100 + "vw";
+
+
     s.style.top = Math.random() * 100 + "vh";
-    s.style.animationDuration = (5 + Math.random() * 10) + "s";
+
+
+    s.style.animationDuration =
+        (5 + Math.random() * 10) + "s";
+
+
     s.style.opacity = Math.random();
 
+
+
     stars.appendChild(s);
+
+
 }
+
+
+
+
+
 
 const sections = document.querySelectorAll("section");
 
+
+
 const observer = new IntersectionObserver(entries => {
+
+
     entries.forEach(entry => {
+
+
         if (entry.isIntersecting) {
+
+
             entry.target.classList.add("show");
+
+
         }
+
+
     });
+
+
 }, {
-    threshold: 0.15
+
+    threshold:0.15
+
 });
 
+
+
+
 sections.forEach(section => observer.observe(section));
+
+
+
 </script>
 
+
+
 </body>
+
 </html>
