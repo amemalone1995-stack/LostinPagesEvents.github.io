@@ -1,64 +1,74 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>September 25th 2027 | Lost In Pages Events</title>
 
-<link rel="preload" href="background.jpg" as="image">
 
 <style>
 
 :root {
 
-    --night:#191970;
-    --magic:#FFFFFF;
-    --text:#F8F8FF;
-    --midnight:#6495ED;
-    --muted:#FFFFFF;
+    --night: #191970;
+    --magic: #FFFFFF;
+    --text: #F8F8FF;
+    --midnight: #6495ED;
+    --muted: #FFFFFF;
 
 }
 
 
 /* RESET */
 
+
 * {
 
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
 }
 
 
-/* BODY */
+
+/* BASE */
+
 
 body {
 
-    font-family:"Times New Roman", Times, serif;
+    font-family: "Times New Roman", Times, serif;
 
-    color:var(--text);
-
-    font-weight:700;
+    color: var(--text);
 
     overflow-x:hidden;
 
+    font-weight:700;
+
     background:
-    linear-gradient(
-        180deg,
-        rgba(7,12,24,0.86),
-        rgba(7,12,24,0.96)
-    ),
-    url("background.jpg") center/cover fixed no-repeat;
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(7,12,24,0.86),
+
+            rgba(7,12,24,0.96)
+
+        ),
+
+        url("background.jpg") center/cover fixed no-repeat;
 
 }
 
 
 
-/* FLOATING STARS */
+
+/* 🌠 FLOATING STARS */
+
 
 .stars {
 
@@ -66,9 +76,11 @@ body {
 
     inset:0;
 
-    overflow:hidden;
-
     pointer-events:none;
+
+    background:#191970;
+
+    overflow:hidden;
 
     z-index:0;
 
@@ -86,7 +98,7 @@ body {
 
     background:white;
 
-    opacity:.4;
+    opacity:0.4;
 
     border-radius:50%;
 
@@ -98,11 +110,12 @@ body {
 
 @keyframes floatStar {
 
+
     from {
 
         transform:translateY(0);
 
-        opacity:.2;
+        opacity:0.2;
 
     }
 
@@ -111,7 +124,7 @@ body {
 
         transform:translateY(-100vh);
 
-        opacity:.8;
+        opacity:0.8;
 
     }
 
@@ -124,23 +137,27 @@ body {
 
 nav {
 
+
     position:sticky;
 
     top:0;
 
     z-index:1000;
 
-    background:rgba(100,149,237,.95);
+    background:var(--midnight);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(14px);
 
-    border-bottom:1px solid rgba(255,255,255,.15);
+    border-bottom:
+
+        1px solid rgba(255,255,255,0.08);
 
 }
 
 
 
 nav ul {
+
 
     display:flex;
 
@@ -160,21 +177,25 @@ nav ul {
 
 nav a {
 
+
     color:var(--text);
 
     text-decoration:none;
 
     letter-spacing:1px;
 
-    font-size:clamp(.9rem,1.5vw,1.1rem);
+    font-size:
 
-    transition:.3s;
+        clamp(0.9rem,1.5vw,1.1rem);
+
+    transition:0.3s;
 
 }
 
 
 
 nav a:hover {
+
 
     color:var(--night);
 
@@ -188,59 +209,125 @@ nav a:hover {
 
 header {
 
-    position:relative;
-
-    z-index:1;
 
     text-align:center;
 
     padding:
-    25px
-    clamp(20px,5vw,60px)
-    80px;
+
+        20px
+
+        clamp(20px,5vw,60px)
+
+        80px;
+
+
+    position:relative;
+
+    z-index:1;
+
 
     background:
-    radial-gradient(
-        circle at top,
-        rgba(156,199,255,.18),
-        transparent 60%
-    );
+
+        radial-gradient(
+
+            circle at top,
+
+            rgba(156,199,255,0.18),
+
+            transparent 60%
+
+        );
 
 }
 
 
 
-/* IMAGE CAROUSEL */
+
+/* LOGO */
+
+
+.logo {
+
+
+    display:block;
+
+    width:min(90%,900px);
+
+    height:auto;
+
+    margin:
+
+        0 auto 35px;
+
+    filter:
+
+        drop-shadow(
+
+            0 0 18px rgba(156,199,255,0.35)
+
+        );
+
+
+    border:
+
+        3px solid rgba(156,199,255,0.7);
+
+
+    border-radius:16px;
+
+
+    box-shadow:
+
+
+        0 0 12px rgba(156,199,255,0.4),
+
+
+        0 0 30px rgba(156,199,255,0.2);
+
+}
+
+
+
+
+/* IMAGE ROLL */
 
 
 .image-carousel {
 
+
     width:min(95%,1200px);
 
-    margin:0 auto 40px;
+    margin:0 auto 35px;
 
     overflow:hidden;
 
     border-radius:16px;
 
-    border:3px solid rgba(156,199,255,.7);
+    border:
+
+        3px solid rgba(156,199,255,0.7);
+
 
     box-shadow:
-    0 0 20px rgba(156,199,255,.35);
+
+        0 0 20px rgba(156,199,255,0.35);
 
 }
 
 
 
+
 .carousel-track {
+
 
     display:flex;
 
-    gap:20px;
-
     width:max-content;
 
-    animation:scrollImages 35s linear infinite;
+
+    animation:
+
+        scrollImages 35s linear infinite;
 
 }
 
@@ -248,21 +335,32 @@ header {
 
 .carousel-track img {
 
-    width:clamp(220px,25vw,350px);
 
-    height:clamp(180px,25vw,300px);
+    width:
+
+        clamp(220px,25vw,350px);
+
+
+    height:
+
+        clamp(180px,25vw,300px);
+
 
     object-fit:cover;
 
-    border-radius:12px;
 
-    flex-shrink:0;
+    margin-right:20px;
+
+
+    border-radius:12px;
 
 }
 
 
 
+
 @keyframes scrollImages {
+
 
     from {
 
@@ -281,11 +379,14 @@ header {
 
 
 
+
 .image-carousel:hover .carousel-track {
+
 
     animation-play-state:paused;
 
 }
+
 
 
 
@@ -294,36 +395,54 @@ header {
 
 .hero {
 
+
     text-align:center;
 
 }
 
 
 
+
+
 .hero h1 {
 
-    font-family:"Great Vibes",cursive;
 
-    font-size:clamp(3rem,8vw,7rem);
+    font-family:"Great Vibes", cursive;
+
+
+    font-size:
+
+        clamp(3rem,8vw,7rem);
+
 
     line-height:1.1;
 
+
     margin-bottom:20px;
+
 
     color:var(--magic);
 
+
     text-shadow:
-    0 0 30px rgba(156,199,255,.25);
+
+        0 0 30px rgba(156,199,255,0.25);
 
 }
 
 
 
+
 .hero h2 {
 
-    font-size:clamp(1.5rem,3vw,2.8rem);
+
+    font-size:
+
+        clamp(1.5rem,3vw,2.8rem);
+
 
     line-height:1.3;
+
 
     margin-bottom:25px;
 
@@ -331,15 +450,25 @@ header {
 
 
 
+
 .hero p {
+
 
     color:var(--muted);
 
-    font-size:clamp(1.05rem,2vw,1.5rem);
+
+    font-size:
+
+        clamp(1.05rem,2vw,1.5rem);
+
 
     line-height:1.7;
 
-    margin:12px auto;
+
+    margin:
+
+        12px auto;
+
 
     max-width:900px;
 
@@ -347,11 +476,16 @@ header {
 
 
 
+
 .hero span {
 
-    font-size:clamp(1.2rem,2vw,1.8rem);
+
+    font-size:
+
+        clamp(1.2rem,2vw,1.8rem);
 
 }
+
 
 
 
@@ -360,30 +494,53 @@ header {
 
 .btn {
 
+
     display:inline-block;
+
 
     margin-top:22px;
 
+
     padding:
-    clamp(15px,2vw,22px)
-    clamp(25px,4vw,40px);
+
+        clamp(15px,2vw,22px)
+
+        clamp(25px,4vw,40px);
+
+
 
     background:var(--magic);
 
+
     color:var(--night);
+
+
 
     border-radius:10px;
 
-    font-size:clamp(1rem,2vw,1.3rem);
+
+
+    font-size:
+
+        clamp(1rem,2vw,1.3rem);
+
+
 
     font-weight:700;
 
+
+
     text-decoration:none;
 
-    box-shadow:
-    0 0 25px rgba(156,199,255,.25);
 
-    transition:.3s;
+
+    box-shadow:
+
+        0 0 25px rgba(156,199,255,0.25);
+
+
+
+    transition:0.3s;
 
 }
 
@@ -391,47 +548,510 @@ header {
 
 .btn:hover {
 
+
     transform:translateY(-3px);
+
+}
+
+/* SECTIONS */
+
+
+section {
+
+    text-align:center;
+
+    position:relative;
+
+
+    width:90%;
+
+    max-width:1100px;
+
+
+    margin:
+
+        80px auto;
+
+
+    padding:
+
+        clamp(50px,7vw,80px)
+
+        clamp(20px,5vw,50px);
+
+
+
+    background:white;
+
+
+
+    border:
+
+        2px solid var(--night);
+
+
+
+    color:var(--night);
+
+
+
+    border-radius:18px;
+
+
+
+    opacity:0;
+
+
+    transform:translateY(40px);
+
+
+
+    transition:
+
+        opacity 1s ease,
+
+        transform 1s ease;
+
+}
+
+
+
+section.show {
+
+
+    opacity:1;
+
+
+    transform:translateY(0);
+
+}
+
+
+
+/* DECORATIVE STARS */
+
+
+section::before {
+
+
+    content:
+
+    "· ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ ·";
+
+
+
+    position:absolute;
+
+
+
+    top:0;
+
+
+
+    left:50%;
+
+
+
+    transform:
+
+        translate(-50%,-50%);
+
+
+
+    background:var(--midnight);
+
+
+
+    color:white;
+
+
+
+    padding:
+
+        0.35rem 1rem;
+
+
+
+    white-space:nowrap;
+
+
+
+    font-size:
+
+        clamp(.7rem,1.5vw,.9rem);
+
+
+
+    border-radius:999px;
 
 }
 
 
 
 
-/* MOBILE */
+/* SECTION HEADINGS */
 
 
-@media(max-width:700px) {
+h2 {
+
+
+    text-align:center;
+
+    font-size:
+
+        clamp(1.8rem,4vw,3rem);
+
+
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* SECTION TEXT */
+
+
+section p {
+
+
+    font-size:
+
+        clamp(1rem,2vw,1.4rem);
+
+
+
+    line-height:1.7;
+
+
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+/* CARDS */
+
+
+.grid {
+
+
+    display:grid;
+
+
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(240px,1fr));
+
+
+
+    gap:25px;
+
+}
+
+
+
+
+.card {
+
+
+    background:var(--midnight);
+
+
+
+    padding:
+
+        clamp(20px,4vw,35px);
+
+
+
+    border-radius:16px;
+
+
+
+    transition:0.4s;
+
+
+
+    position:relative;
+
+
+
+    overflow:hidden;
+
+
+
+    color:white;
+
+}
+
+
+
+.card:hover {
+
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.card h3 {
+
+
+    font-size:
+
+        clamp(1.2rem,2.5vw,1.8rem);
+
+
+
+    margin-bottom:15px;
+
+}
+
+
+
+.card p {
+
+
+    color:white;
+
+
+
+    font-size:
+
+        clamp(1rem,2vw,1.2rem);
+
+}
+
+
+
+
+
+/* EVENT CARDS */
+
+
+.event-grid {
+
+
+    display:grid;
+
+
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(240px,1fr));
+
+
+
+    gap:25px;
+
+}
+
+
+
+
+.event-card {
+
+
+    background:var(--midnight);
+
+
+
+    padding:
+
+        clamp(25px,4vw,40px);
+
+
+
+    border-radius:16px;
+
+
+
+    text-decoration:none;
+
+
+
+    color:white;
+
+
+
+    transition:0.4s;
+
+
+
+    display:block;
+
+
+
+    box-shadow:
+
+        0 0 20px rgba(156,199,255,0.25);
+
+}
+
+
+
+.event-card:hover {
+
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.event-card .icon {
+
+
+    width:70px;
+
+
+    height:70px;
+
+
+
+    margin:0 auto 20px;
+
+
+
+    display:flex;
+
+
+
+    align-items:center;
+
+
+
+    justify-content:center;
+
+
+
+    background:white;
+
+
+
+    color:var(--night);
+
+
+
+    border-radius:12px;
+
+
+
+    font-size:2.5rem;
+
+}
+
+
+
+.event-card h3 {
+
+
+    font-size:
+
+        clamp(1.2rem,2.5vw,1.8rem);
+
+
+
+    margin-bottom:15px;
+
+}
+
+
+
+.event-card p {
+
+
+    color:white;
+
+
+
+    font-size:
+
+        clamp(1rem,2vw,1.2rem);
+
+
+
+    line-height:1.6;
+
+}
+
+
+
+.event-card span {
+
+
+    display:inline-block;
+
+
+
+    margin-top:15px;
+
+
+
+    font-weight:bold;
+
+
+
+    color:white;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer {
+
+
+    text-align:center;
+
+
+
+    padding:30px;
+
+
+
+    color:var(--muted);
+
+}
+
+
+
+
+/* MOBILE ADJUSTMENTS */
+
+
+@media(max-width:700px){
 
 
     nav ul {
+
 
         gap:12px;
 
     }
 
 
-    nav ul {
-
-        flex-direction:column;
-
-        align-items:center;
-
-    }
-
 
     header {
+
 
         padding-bottom:50px;
 
     }
 
 
-    .carousel-track img {
 
-        width:220px;
+    .logo {
 
-        height:180px;
+
+        width:100%;
 
     }
 
@@ -440,11 +1060,29 @@ header {
 
 
 
-@media(prefers-reduced-motion:reduce) {
+/* REDUCE MOTION */
 
 
-    .star,
-    .carousel-track {
+@media(prefers-reduced-motion:reduce){
+
+
+    section {
+
+
+        transition:none;
+
+
+        opacity:1;
+
+
+        transform:none;
+
+    }
+
+
+
+    .star {
+
 
         animation:none;
 
@@ -489,53 +1127,51 @@ header {
 
 <div class="image-carousel">
 
-
-<div class="carousel-track" id="carousel">
-
-
-<img src="images/1.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/2host.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/1nar.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/1Panel.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/5.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/6.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/8.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/9.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/10.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/11.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/3.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/4.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/19.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/13.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/14.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/15.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/16.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/17.WEBP" alt="Lost In Pages event" loading="lazy">
-
-<img src="images/18.WEBP" alt="Lost In Pages event" loading="lazy">
+<div class="carousel-track">
 
 
-</div>
+<img src="images/1.WEBP" alt="Lost In Pages event">
+
+<img src="images/2host.WEBP" alt="Lost In Pages event">
+
+<img src="images/1nar.WEBP" alt="Lost In Pages event">
+
+<img src="images/1Panel.WEBP" alt="Lost In Pages event">
+
+<img src="images/5.WEBP" alt="Lost In Pages event">
+
+<img src="images/6.WEBP" alt="Lost In Pages event">
+
+<img src="images/8.WEBP" alt="Lost In Pages event">
+
+<img src="images/9.WEBP" alt="Lost In Pages event">
+
+<img src="images/10.WEBP" alt="Lost In Pages event">
+
+<img src="images/11.WEBP" alt="Lost In Pages event">
+
+<img src="images/3.WEBP" alt="Lost In Pages event">
+
+<img src="images/4.WEBP" alt="Lost In Pages event">
+
+<img src="images/19.WEBP" alt="Lost In Pages event">
+
+<img src="images/13.WEBP" alt="Lost In Pages event">
+
+<img src="images/14.WEBP" alt="Lost In Pages event">
+
+<img src="images/15.WEBP" alt="Lost In Pages event">
+
+<img src="images/16.WEBP" alt="Lost In Pages event">
+
+<img src="images/17.WEBP" alt="Lost In Pages event">
+
+<img src="images/18.WEBP" alt="Lost In Pages event">
+
 
 </div>
 
+</div>
 
 
 
@@ -574,8 +1210,7 @@ We are bringing a fiction book event to the South Coast.
 
 
 
-<a 
-href="https://www.eventbrite.co.uk/e/lost-in-pages-brightons-newest-book-event-tickets-1992957687091"
+<a href="https://www.eventbrite.co.uk/e/lost-in-pages-brightons-newest-book-event-tickets-1992957687091?utm_experiment=test_share_listing&aff=ebdsshios&sg=f85606848e1d295860e7303a016f1e3bd4de5b39f76db082bb221ff8005ed2113809f6419407b0cc4c11094717f557bc4c7b17e6ae2e0d27d760214a00aef84d4b33c8b72dee2f256543bce8dd98"
 class="btn"
 target="_blank"
 rel="noopener noreferrer">
@@ -595,35 +1230,31 @@ Discover More
 </a>
 
 
-
 </div>
 
 
 </header>
 
-
-    <!-- ABOUT SECTION -->
-
 <section id="about">
 
 
-<h2>About Lost in Pages</h2>
+    <h2>About Lost in Pages</h2>
 
 
-<p>
-Lost In Pages Events is created by two bookish artists with a dream of bringing magical
-book event to life on the South Coast.
-</p>
+    <p>
+        Lost In Pages Events is created by two bookish artists with a dream of bringing magical
+        book event to life on the South Coast.
+    </p>
 
 
-<p>
-Leading with transparency of our vision and values, we are creating an event for the community.
-</p>
+    <p>
+        Leading with transparency of our vision and values, we are creating an event for the community
+    </p>
 
 
-<p>
-Bringing a world of fiction together in one place, alongside crafts, Q&A's, signing, shopping and more.
-</p>
+    <p>
+        Bringing a world of fiction together in one place, alongside crafts, Q&A's, signing, shopping and more
+    </p>
 
 
 </section>
@@ -631,11 +1262,7 @@ Bringing a world of fiction together in one place, alongside crafts, Q&A's, sign
 
 
 
-
-<!-- EVENT SECTION -->
-
-
-<section id="event">
+<section id="event" style="background:#f5f7fb;">
 
 
 <div class="container">
@@ -661,28 +1288,23 @@ Whether you're an avid reader, aspiring writer, audiobook lover or simply lookin
 <a href="about.html" class="event-card">
 
 
-<div class="icon">
-📖
-</div>
+<div class="icon">📖</div>
 
 
-<h3>
-About the Event
-</h3>
+<h3>About the Event</h3>
 
 
 <p>
+
 Discover everything you need to know about Lost In Pages, including FAQs, venue information and what to expect on the day.
+
 </p>
 
 
-<span>
-Learn More →
-</span>
+<span>Learn More →</span>
 
 
 </a>
-
 
 
 
@@ -690,28 +1312,23 @@ Learn More →
 <a href="Guests.html" class="event-card">
 
 
-<div class="icon">
-✨
-</div>
+<div class="icon">✨</div>
 
 
-<h3>
-Authors & Guests
-</h3>
+<h3>Authors & Guests</h3>
 
 
 <p>
+
 Meet authors, narrators, artists, bookshops, and more.
+
 </p>
 
 
-<span>
-Meet Everyone →
-</span>
+<span>Meet Everyone →</span>
 
 
 </a>
-
 
 
 
@@ -719,24 +1336,20 @@ Meet Everyone →
 <a href="Policies.html" class="event-card">
 
 
-<div class="icon">
-🛡️
-</div>
+<div class="icon">🛡️</div>
 
 
-<h3>
-Policies
-</h3>
+<h3>Policies</h3>
 
 
 <p>
+
 Read our accessibility guidance, attendee information, cancellation policy and event rules before attending.
+
 </p>
 
 
-<span>
-Read Policies →
-</span>
+<span>Read Policies →</span>
 
 
 </a>
@@ -754,52 +1367,12 @@ Read Policies →
 
 
 
-
-<!-- EXTRA CARD SECTION -->
-
-
-<section>
-
-
-<div class="grid">
-
-
-<a href="Policies.html" class="card">
-
-
-<h3>
-Our Policies
-</h3>
-
-
-<p>
-Everything you need to know before attending.
-</p>
-
-
-</a>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- NEWSLETTER -->
 
 
 <section id="newsletter">
 
 
-<h2>
-Join Our Newsletter
-</h2>
+<h2>Join Our Newsletter</h2>
 
 
 
@@ -809,9 +1382,8 @@ Be the first to hear about tickets and updates.
 
 
 
-<iframe
 
-loading="lazy"
+<iframe
 
 src="https://docs.google.com/forms/d/e/1FAIpQLSfaoxTG4EFEg1JrciLuYrGdon9V8X9vvr7cZRnm9fXDVitEPQ/viewform?embedded=true"
 
@@ -832,22 +1404,18 @@ style="border:none; margin-top:20px;">
 
 
 
-<!-- CONTACT -->
-
 
 <section id="contact">
 
 
-<h2>
-Contact Us
-</h2>
+<h2>Contact Us</h2>
 
 
 
 <p>
-Email:
-lostinpagesevents@gmail.com
+Email: lostinpagesevents@gmail.com
 </p>
+
 
 
 
@@ -855,8 +1423,7 @@ lostinpagesevents@gmail.com
 
 Instagram:
 
-<a 
-href="https://instagram.com/lostinpagesevents"
+<a href="https://instagram.com/lostinpagesevents"
 target="_blank"
 rel="noopener noreferrer">
 
@@ -873,8 +1440,7 @@ rel="noopener noreferrer">
 
 TikTok:
 
-<a 
-href="https://tiktok.com/@lostinpagesevent"
+<a href="https://tiktok.com/@lostinpagesevent"
 target="_blank"
 rel="noopener noreferrer">
 
@@ -893,8 +1459,6 @@ rel="noopener noreferrer">
 
 
 
-<!-- FOOTER -->
-
 
 <footer>
 
@@ -902,482 +1466,92 @@ rel="noopener noreferrer">
 &copy; 2026 Lost In Pages Events
 </p>
 
-
 </footer>
 
-<style>
 
-/* SECTION STYLING */
 
-section {
 
-    text-align:center;
-
-    position:relative;
-
-    width:90%;
-
-    max-width:1100px;
-
-    margin:80px auto;
-
-    padding:
-    clamp(50px,7vw,80px)
-    clamp(20px,5vw,50px);
-
-    background:white;
-
-    border:2px solid var(--night);
-
-    color:var(--night);
-
-    border-radius:18px;
-
-    opacity:0;
-
-    transform:translateY(40px);
-
-    transition:
-    opacity 1s ease,
-    transform 1s ease;
-
-}
-
-
-
-section.show {
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-
-
-/* SECTION DECORATION */
-
-section::before {
-
-    content:
-    "· ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ ·";
-
-    position:absolute;
-
-    top:0;
-
-    left:50%;
-
-    transform:
-    translate(-50%,-50%);
-
-    background:var(--midnight);
-
-    color:white;
-
-    padding:
-    .35rem 1rem;
-
-    white-space:nowrap;
-
-    font-size:
-    clamp(.7rem,1.5vw,.9rem);
-
-    border-radius:999px;
-
-}
-
-
-
-/* HEADINGS */
-
-
-.section-title,
-section h2 {
-
-    text-align:center;
-
-    font-size:
-    clamp(1.8rem,4vw,3rem);
-
-    margin-bottom:25px;
-
-}
-
-
-
-section p {
-
-    font-size:
-    clamp(1rem,2vw,1.4rem);
-
-    line-height:1.7;
-
-    margin-bottom:15px;
-
-}
-
-
-
-/* CONTAINER */
-
-
-.container {
-
-    width:100%;
-
-}
-
-
-
-/* EVENT GRID */
-
-
-.event-grid,
-.grid {
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
-
-    gap:25px;
-
-}
-
-
-
-/* EVENT CARDS */
-
-
-.event-card {
-
-    background:var(--midnight);
-
-    padding:
-    clamp(25px,4vw,40px);
-
-    border-radius:16px;
-
-    text-decoration:none;
-
-    color:white;
-
-    display:block;
-
-    transition:.4s;
-
-    box-shadow:
-    0 0 20px rgba(156,199,255,.25);
-
-}
-
-
-
-.event-card:hover {
-
-    transform:translateY(-8px);
-
-}
-
-
-
-.event-card .icon {
-
-    width:70px;
-
-    height:70px;
-
-    margin:
-    0 auto 20px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:white;
-
-    color:var(--night);
-
-    border-radius:12px;
-
-    font-size:2.5rem;
-
-}
-
-
-
-.event-card h3 {
-
-    font-size:
-    clamp(1.2rem,2.5vw,1.8rem);
-
-    margin-bottom:15px;
-
-}
-
-
-
-.event-card p {
-
-    color:white;
-
-    font-size:
-    clamp(1rem,2vw,1.2rem);
-
-}
-
-
-
-.event-card span {
-
-    display:inline-block;
-
-    margin-top:15px;
-
-    color:white;
-
-    font-weight:bold;
-
-}
-
-
-
-/* POLICY CARD */
-
-
-.card {
-
-    background:var(--midnight);
-
-    padding:
-    clamp(20px,4vw,35px);
-
-    border-radius:16px;
-
-    color:white;
-
-    text-decoration:none;
-
-    transition:.4s;
-
-}
-
-
-
-.card:hover {
-
-    transform:translateY(-8px);
-
-}
-
-
-
-.card h3 {
-
-    font-size:
-    clamp(1.2rem,2.5vw,1.8rem);
-
-    margin-bottom:15px;
-
-}
-
-
-
-.card p {
-
-    color:white;
-
-}
-
-
-
-/* FOOTER */
-
-
-footer {
-
-    text-align:center;
-
-    padding:30px;
-
-    color:var(--muted);
-
-}
-
-
-
-
-/* MOBILE */
-
-
-@media(max-width:700px){
-
-    section {
-
-        width:94%;
-
-        margin:60px auto;
-
-    }
-
-
-    section::before {
-
-        font-size:.65rem;
-
-    }
-
-}
-
-
-
-
-</style>
 
 
 
 <script>
 
 
-/* CREATE FLOATING STARS */
-
-
 const stars = document.getElementById("stars");
 
 
-for(let i = 0; i < 35; i++){
+
+for (let i = 0; i < 60; i++) {
 
 
-    const star = document.createElement("div");
+    const s = document.createElement("div");
 
 
-    star.className = "star";
-
-
-    star.style.left =
-    Math.random() * 100 + "vw";
-
-
-    star.style.top =
-    Math.random() * 100 + "vh";
-
-
-    star.style.animationDuration =
-    (5 + Math.random() * 10) + "s";
-
-
-    star.style.opacity =
-    Math.random();
-
-
-    stars.appendChild(star);
-
-}
+    s.classList.add("star");
 
 
 
+    s.style.left = Math.random() * 100 + "vw";
 
 
-/* CREATE SEAMLESS CAROUSEL LOOP */
+    s.style.top = Math.random() * 100 + "vh";
 
 
-const carousel =
-document.getElementById("carousel");
+    s.style.animationDuration =
+        (5 + Math.random() * 10) + "s";
 
 
-const images =
-Array.from(carousel.children);
-
-
-
-images.forEach(image => {
-
-    const clone =
-    image.cloneNode(true);
-
-    clone.loading="lazy";
-
-    carousel.appendChild(clone);
-
-});
+    s.style.opacity = Math.random();
 
 
 
-
-
-
-
-/* SCROLL REVEAL */
-
-
-const sections =
-document.querySelectorAll("section");
-
-
-
-const observer =
-new IntersectionObserver(
-(entries)=>{
-
-
-entries.forEach(entry=>{
-
-
-if(entry.isIntersecting){
-
-
-entry.target.classList.add("show");
+    stars.appendChild(s);
 
 
 }
 
 
+
+
+
+
+const sections = document.querySelectorAll("section");
+
+
+
+const observer = new IntersectionObserver(entries => {
+
+
+    entries.forEach(entry => {
+
+
+        if (entry.isIntersecting) {
+
+
+            entry.target.classList.add("show");
+
+
+        }
+
+
+    });
+
+
+}, {
+
+    threshold:0.15
+
 });
 
 
-},
-{
-
-threshold:.15
-
-});
 
 
-
-sections.forEach(section => {
-
-observer.observe(section);
-
-});
-
-
-
-
-
-
-/* REDUCE MOTION SUPPORT */
-
-
-if(
-window.matchMedia(
-"(prefers-reduced-motion: reduce)"
-).matches
-){
-
-
-document.querySelector(".carousel-track")
-.style.animation="none";
-
-
-}
-
+sections.forEach(section => observer.observe(section));
 
 
 
 </script>
+
 
 
 </body>
