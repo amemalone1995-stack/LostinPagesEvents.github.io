@@ -156,27 +156,52 @@ nav {
 
 
 
-nav ul {
-
+.nav-container {
 
     display:flex;
 
-    justify-content:center;
+    justify-content:space-between;
 
-    flex-wrap:wrap;
+    align-items:center;
+
+    padding:14px 40px;
+
+}
+
+
+.nav-logo {
+
+    color:var(--text);
+
+    font-size:clamp(1.6rem,3vw,2.2rem);
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    white-space:nowrap;
+
+}
+
+
+nav ul {
+
+    display:flex;
+
+    align-items:center;
 
     gap:26px;
 
     list-style:none;
 
-    padding:14px;
+    margin:0;
+
+    padding:0;
 
 }
 
 
-
 nav a {
-
 
     color:var(--text);
 
@@ -184,13 +209,12 @@ nav a {
 
     letter-spacing:1px;
 
-    font-size:
-
-        clamp(0.9rem,1.5vw,1.1rem);
+    font-size:clamp(0.9rem,1.5vw,1.1rem);
 
     transition:0.3s;
 
 }
+
 
 
 
