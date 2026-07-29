@@ -230,7 +230,82 @@ header {
 
 }
 
+/* IMAGE ROLL */
 
+.image-carousel {
+
+    width:min(95%,1200px);
+
+    margin:0 auto 35px;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    border:
+        3px solid rgba(156,199,255,0.7);
+
+    box-shadow:
+        0 0 20px rgba(156,199,255,0.35);
+
+}
+
+
+.carousel-track {
+
+    display:flex;
+
+    width:max-content;
+
+    animation:
+        scrollImages 35s linear infinite;
+
+}
+
+
+.carousel-track img {
+
+    width:
+        clamp(220px,25vw,350px);
+
+    height:
+        clamp(180px,25vw,300px);
+
+    object-fit:cover;
+
+    margin-right:20px;
+
+    border-radius:12px;
+
+}
+
+
+
+@keyframes scrollImages {
+
+    from {
+
+        transform:translateX(0);
+
+    }
+
+
+    to {
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+
+/* Pause when hovering */
+
+.image-carousel:hover .carousel-track {
+
+    animation-play-state:paused;
+
+}
 
 /* HERO */
 
@@ -670,8 +745,26 @@ footer {
 
 <header>
 
+<div class="image-carousel">
 
-    <img src="Facebook Cover.png" class="logo" alt="Logo">
+    <div class="carousel-track">
+
+        <img src="images/1.webp" alt="Lost In Pages event">
+        <img src="images/11.webp" alt="Lost In Pages event">
+        <img src="images/16.webp" alt="Lost In Pages event">
+        <img src="images/1host.webp" alt="Lost In Pages event">
+        <img src="images/host.webp" alt="Lost In Pages event">
+
+        <!-- Repeat images so the roll loops smoothly -->
+        <img src="images/1.webp" alt="Lost In Pages event">
+        <img src="images/11.webp" alt="Lost In Pages event">
+        <img src="images/16.webp" alt="Lost In Pages event">
+        <img src="images/1host.webp" alt="Lost In Pages event">
+        <img src="images/host.webp" alt="Lost In Pages event">
+
+    </div>
+
+</div>
 
 
     <div class="hero">
