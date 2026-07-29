@@ -644,7 +644,108 @@ section p {
 
 }
 
+/* EVENT CARDS */
 
+.event-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+}
+
+
+.event-card {
+
+    background:var(--midnight);
+
+    padding:
+        clamp(25px,4vw,40px);
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:0.4s;
+
+    display:block;
+
+    box-shadow:
+        0 0 20px rgba(156,199,255,0.25);
+
+}
+
+
+.event-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+.event-card .icon {
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:white;
+
+    color:var(--night);
+
+    border-radius:12px;
+
+    font-size:2.5rem;
+
+}
+
+
+.event-card h3 {
+
+    font-size:
+        clamp(1.2rem,2.5vw,1.8rem);
+
+    margin-bottom:15px;
+
+}
+
+
+.event-card p {
+
+    color:white;
+
+    font-size:
+        clamp(1rem,2vw,1.2rem);
+
+    line-height:1.6;
+
+}
+
+
+.event-card span {
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
 
 /* FOOTER */
 
