@@ -1,320 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>25th September 2027</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lost In Pages | Brighton Book Event</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --night: #191970;
-    --magic: #FFFFFF;
-    --text: #F8F8FF;
-    --midnight: #6495ED;
-    --muted: #FFFFFF;
+
+:root{
+
+--night:#191970;
+--blue:#4169E1;
+--white:#ffffff;
+--light:#f5f7fb;
+--text:#24304d;
+
 }
 
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ---------------- RESET ---------------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
-/* BASE FONT (everything default) */
-body {
-    font-family: "Times New Roman", Times, serif;
-    color: var(--text);
-    overflow-x: hidden;
-    font-weight: 700;
+body{
 
-    background:
-        linear-gradient(180deg, rgba(7,12,24,0.86), rgba(7,12,24,0.96)),
-        url("background.jpg") center/cover fixed no-repeat;
+font-family:'Inter',sans-serif;
+background:#191970;
+color:white;
+overflow-x:hidden;
+
 }
 
-/* 🌠 FLOATING STARS */
-.stars {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background: #191970 ;
-    overflow: hidden;
-    z-index: 0;
+/* ---------------- STARS ---------------- */
+
+.stars{
+
+position:fixed;
+inset:0;
+background:#191970;
+overflow:hidden;
+pointer-events:none;
+z-index:-2;
+
 }
 
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    opacity: 0.4;
-    border-radius: 50%;
-    animation: floatStar linear infinite;
+.star{
+
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+opacity:.5;
+animation:floatStar linear infinite;
+
 }
 
-@keyframes floatStar {
-    from {
-        transform: translateY(0);
-        opacity: 0.2;
-    }
-    to {
-        transform: translateY(-100vh);
-        opacity: 0.8;
-    }
+@keyframes floatStar{
+
+from{
+
+transform:translateY(0);
+
 }
 
-/* NAV */
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: var(--midnight);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+to{
+
+transform:translateY(-120vh);
+
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 26px;
-    list-style: none;
-    padding: 14px;
 }
 
-nav a {
-    color: var(--text);
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: 0.3s;
+/* ---------------- NAVIGATION ---------------- */
+
+nav{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:24px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(25,25,112,.45);
+backdrop-filter:blur(16px);
+z-index:1000;
+
 }
 
-nav a:hover {
-    color: var(--midnight);
+.logo-text{
+
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+font-weight:700;
+color:white;
+
 }
 
-/* HERO */
-header {
-    text-align: center;
-    padding: 0px 20px 70px;
-    position: relative;
-    z-index: 1;
+nav ul{
 
-    background: radial-gradient(circle at top,
-        rgba(156,199,255,0.18),
-        transparent 60%);
+display:flex;
+gap:40px;
+list-style:none;
+
 }
 
-.logo {
-   margin-bottom: 40px;
-    display: block;
-    width: 90%;
-    max-width: none;
-    height: auto;
-    margin: 0 auto 18px;
-    filter: drop-shadow(0 0 18px rgba(156,199,255,0.35));
-    border: 3px solid rgba(156,199,255,0.7);
-    border-radius: 16px;
-    box-shadow:
-        0 0 12px rgba(156,199,255,0.4),
-        0 0 30px rgba(156,199,255,0.2);
+nav a{
+
+text-decoration:none;
+color:white;
+font-size:.95rem;
+font-weight:600;
+letter-spacing:.08em;
+text-transform:uppercase;
+transition:.3s;
+
 }
 
-.hero h1 {
-    font-family: "Great Vibes", cursive;
-    font-size: 8rem;
-    color: var(--magic);
-    text-shadow: 0 0 30px rgba(156,199,255,0.25);
+nav a:hover{
+
+color:#9CC7FF;
+
 }
 
-p {
-    font-size: clamp(1rem, 1.2vw, 1.5rem);
-    line-height: 1.6;
+/* ---------------- HERO ---------------- */
+
+header{
+
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:120px 8%;
+position:relative;
+
 }
 
+.hero{
 
-.hero p {
-    color: var(--muted);
-    margin-top: 6px;
+max-width:700px;
+z-index:2;
+
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 22px;
-    padding: 26px 26px;
-    background: var(--magic);
-    color: var(--night);
-    border-radius: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 0 25px rgba(156,199,255,0.25);
-    transition: 0.3s;
+.hero small{
+
+display:block;
+letter-spacing:4px;
+text-transform:uppercase;
+margin-bottom:18px;
+font-weight:600;
+opacity:.8;
+
 }
 
-.btn:hover {
-    transform: translateY(-3px);
+.hero h1{
+
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(4rem,10vw,7rem);
+line-height:.9;
+margin-bottom:20px;
+
 }
 
-/* SECTIONS */
-section {
-    text-align:center;
-    position: relative;
-    max-width: 1050px;
-    margin: 80px auto;
-    padding: 70px 22px;
-    background: white;
-    border: 2px solid  var(--night);
-    color: var(--night);
-    border-radius: 18px;
-    backdrop-filter: blur(10px);
+.hero h2{
 
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease, transform 1s ease;
+font-size:2rem;
+font-family:'Cormorant Garamond',serif;
+font-weight:500;
+margin-bottom:35px;
+
 }
 
-section.show {
-    opacity: 1;
-    transform: translateY(0);
+.hero p{
+
+font-size:1.15rem;
+line-height:1.8;
+max-width:620px;
+opacity:.95;
+margin-bottom:15px;
+
 }
 
-section::before {
-    content: "· ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ · ✦ ✧ ✦ ✧ ✦ · ☽ ✧ ☾ ·";
-    
-    position: absolute;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
+/* ---------------- BUTTONS ---------------- */
 
-    display: block;
-    padding: 0.35rem 1rem;
+.buttons{
 
-    background-color: var(--midnight);
-    color: rgba(255, 255, 255, 0.85);
+display:flex;
+gap:18px;
+margin-top:40px;
+flex-wrap:wrap;
 
-    white-space: nowrap;
-    font-size: 0.9rem;
-    line-height: 1;
-
-    border-radius: 999px;
-
-    z-index: 1;
 }
 
-/* TITLES */
-h2 {
-    text-align: center;
-    font-weight: 700;
-    font-size: 2.4rem;
-    margin-bottom: 25px;
+.btn{
+
+display:inline-block;
+padding:18px 38px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+transition:.35s;
+
 }
 
-/* TEXT */
-.about p,
-.contact p {
-    text-align: center;
-    color: var(--muted);
-    font-size: 1.4rem;
-    font-weight:700;
+.primary{
+
+background:white;
+color:#191970;
+
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
+.primary:hover{
+
+transform:translateY(-4px);
+
 }
 
-.card {
-    background: var(--magic);
-    border: 1px solid rgba(156,199,255,0.12);
-    padding: 26px;
-    border-radius: 16px;
-    transition: 0.4s;
-    position: relative;
-    overflow: hidden;
+.secondary{
+
+border:2px solid white;
+color:white;
+
 }
 
-.card::after {
-    content: "";
-    position: absolute;
-    top: -60%;
-    left: -70%;
-    width: 60%;
-    height: 200%;
-    background: linear-gradient(90deg, transparent, rgba(156,199,255,0.12), transparent);
-    transform: rotate(25deg);
-    transition: 0.6s;
+.secondary:hover{
+
+background:white;
+color:#191970;
+
 }
 
-.card:hover::after {
-    left: 120%;
+/* ---------------- HERO IMAGE ---------------- */
+
+.hero-image{
+
+position:absolute;
+right:5%;
+bottom:0;
+width:45%;
+display:flex;
+justify-content:center;
+align-items:flex-end;
+
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(156,199,255,0.4);
+.hero-image img{
+
+width:100%;
+max-width:650px;
+border-radius:20px;
+box-shadow:0 40px 90px rgba(0,0,0,.45);
+
 }
 
-.card {
-    background: var(--midnight); /* blue */
-    border: 1px solid rgba(156,199,255,0.25);
-    padding: 26px;
-    border-radius: 16px;
-    transition: 0.4s;
-    position: relative;
-    overflow: hidden;
-    color: white; /* ensures text defaults to white */
+/* ---------------- SECTION ---------------- */
+
+section{
+
+background:white;
+color:#24304d;
+padding:110px 8%;
+
 }
 
-.card h3,
-.card p {
-    color: white;
+.container{
+
+max-width:1200px;
+margin:auto;
+
 }
 
+.section-title{
 
-footer {
-    text-align: center;
-    padding: 30px;
-    color: var(--muted);
+font-family:'Cormorant Garamond',serif;
+font-size:3.5rem;
+margin-bottom:25px;
+text-align:center;
+
 }
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-family: cursive;
-        font-size: 2.5rem;
-        color: #F8F8FF;
-        text-shadow: 0 0 30px rgba(156, 199, 255, 0.25);
-    }
+.section-intro{
+
+text-align:center;
+max-width:850px;
+margin:auto auto 70px;
+font-size:1.1rem;
+line-height:1.8;
+
 }
 
-@media (max-width: 768px) {
-    header {
-        overflow: hidden;
-    }
+/* ---------------- ABOUT ---------------- */
 
-    .logo {
-        display: block;
-        width: 120%;
-        max-width: none;
-        margin: 0;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+.about-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+
 }
 
-@media (prefers-reduced-motion: reduce) {
-    section {
-        transition: none;
-        opacity: 1;
-        transform: none;
-    }
+.about-grid img{
 
-    .star {
-        animation: none;
-    }
+width:100%;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,.15);
+
 }
+
+.about-text h3{
+
+font-family:'Cormorant Garamond',serif;
+font-size:2.5rem;
+margin-bottom:25px;
+
+}
+
+.about-text p{
+
+font-size:1.1rem;
+line-height:1.9;
+margin-bottom:20px;
+
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:900px){
+
+nav{
+
+flex-direction:column;
+gap:20px;
+
+}
+
+nav ul{
+
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+header{
+
+padding-top:180px;
+text-align:center;
+justify-content:center;
+
+}
+
+.hero{
+
+margin:auto;
+
+}
+
+.hero-image{
+
+display:none;
+
+}
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.section-title{
+
+font-size:2.6rem;
+
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
@@ -322,139 +397,511 @@ footer {
 <div class="stars" id="stars"></div>
 
 <nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#event">Event</a></li>
-        <li><a href="#newsletter">Newsletter</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+
+<div class="logo-text">
+Lost In Pages
+</div>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+<li><a href="#event">Event</a></li>
+<li><a href="#newsletter">Newsletter</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
 </nav>
 
 <header>
-    <img src="Facebook Cover.png" class="logo" alt="Logo">
 
-    <div class="hero">
-        <h1>September 25th 2027</h1>
-        <h2>Brighton Hilton Metropole</h2>
+<div class="hero">
 
-        <p>We heard the bookish community loud and clear.</p>
-        <p>We are bringing a fiction book event to the South Coast.</p>
-        <p></p>
+<small>Brighton's Newest Fiction Event</small>
 
-        <a href="https://www.eventbrite.co.uk/e/lost-in-pages-brightons-newest-book-event-tickets-1992957687091?utm_experiment=test_share_listing&aff=ebdsshios&sg=f85606848e1d295860e7303a016f1e3bd4de5b39f76db082bb221ff8005ed2113809f6419407b0cc4c11094717f557bc4c7b17e6ae2e0d27d760214a00aef84d4b33c8b72dee2f256543bce8dd98" class="btn" target="_blank" rel="noopener noreferrer">
-    Purchase Tickets
+<h1>25 September 2027</h1>
+
+<h2>Brighton Hilton Metropole</h2>
+
+<p>
+We heard the book community loud and clear.
+</p>
+
+<p>
+Lost In Pages is bringing a magical fiction book convention to the South Coast, celebrating authors, narrators, artists, independent bookshops and readers together under one roof.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary"
+href="https://www.eventbrite.co.uk/e/lost-in-pages-brightons-newest-book-event-tickets-1992957687091?utm_experiment=test_share_listing&aff=ebdsshios&sg=f85606848e1d295860e7303a016f1e3bd4de5b39f76db082bb221ff8005ed2113809f6419407b0cc4c11094717f557bc4c7b17e6ae2e0d27d760214a00aef84d4b33c8b72dee2f256543bce8dd98">
+Purchase Tickets
 </a>
 
-<br>
+<a class="btn secondary" href="#about">
+Discover More
+</a>
 
-<a href="#event" class="btn">Discover More</a>
+</div>
 
-    </div>
+</div>
+
+<div class="hero-image">
+
+<img src="Facebook Cover.png" alt="Lost In Pages">
+
+</div>
+
 </header>
 
 <section id="about">
-    <h2>About Lost in Pages</h2>
 
-    <p>
-        Lost In Pages Events is created by two bookish artists with a dream of bringing magical
-        book event to life on the South Coast.
-    </p>
-    <p> Leading with transparency of our vision and values, we are creating an event for the community</p>
-    <p> Bringing a world of fiction together in one place, alongside crafts, Q&A's, signing, shopping and more</p>
+<div class="container">
+
+<h2 class="section-title">
+About Lost In Pages
+</h2>
+
+<p class="section-intro">
+
+Created by two passionate book lovers, Lost In Pages exists to bring an unforgettable fantasy-inspired book event to the South Coast. Our goal is to create a welcoming space where readers, authors, narrators, artists and independent businesses can celebrate stories together.
+
+</p>
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<h3>More than a book signing</h3>
+
+<p>
+
+Expect bestselling and indie authors, talented narrators, unique vendors, bookish artwork, immersive experiences, Q&A sessions, exclusive merchandise and plenty of opportunities to meet fellow readers.
+
+</p>
+
+<p>
+
+Built on transparency, creativity and community, every decision we make is centred around creating an event we'd love to attend ourselves.
+
+</p>
+
+</div>
+
+<div>
+
+<img src="Facebook Cover.png" alt="Lost In Pages Event">
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
+    <!-- ===========================
+EVENT SECTION
+============================ -->
 
-    <section id="event">
-    <h2>Brighton Book Event 2027</h2>
+<section id="event" style="background:#f5f7fb;">
 
-    <div class="grid">
+<div class="container">
 
-        <a href="about.html" class="card" style="text-decoration:none; color:inherit;">
-            <h3>About Us & Our Event</h3>
-            <p>Frequently Asked Questions and General Information</p>
-        </a>
+<h2 class="section-title">
+Brighton Book Event 2027
+</h2>
 
-        <a href="Guests.html" class="card" style="text-decoration:none; color:inherit;">
-            <h3>Our Authors, Vendors & Narrators</h3>
-            <p>Independent bookshops, Authors, Narrators, Hosts and bookish merch.</p>
-        </a>
+<p class="section-intro">
 
-        <a href="Policies.html" class="card" style="text-decoration:none; color:inherit;">
-            <h3>Our Policies</h3>
-            <p>Everything you need to know before attending.</p>
-        </a>
+Whether you're an avid reader, aspiring writer, audiobook lover or simply looking for a magical day out, Lost In Pages has something for everyone.
 
-    </div>
+</p>
+
+<div class="event-grid">
+
+<a href="about.html" class="event-card">
+
+<div class="icon">📖</div>
+
+<h3>About the Event</h3>
+
+<p>
+
+Discover everything you need to know about Lost In Pages, including FAQs, venue information and what to expect on the day.
+
+</p>
+
+<span>Learn More →</span>
+
+</a>
+
+<a href="Guests.html" class="event-card">
+
+<div class="icon">✨</div>
+
+<h3>Authors & Guests</h3>
+
+<p>
+
+Meet bestselling and independent authors, narrators, artists, bookshops, creators and bookish vendors.
+
+</p>
+
+<span>Meet Everyone →</span>
+
+</a>
+
+<a href="Policies.html" class="event-card">
+
+<div class="icon">🛡️</div>
+
+<h3>Policies</h3>
+
+<p>
+
+Read our accessibility guidance, attendee information, cancellation policy and event rules before attending.
+
+</p>
+
+<span>Read Policies →</span>
+
+</a>
+
+</div>
+
+</div>
+
 </section>
 
+<!-- ===========================
+NEWSLETTER
+============================ -->
 
 <section id="newsletter">
-    <h2>Join Our Newsletter</h2>
 
-    <p style="text-align:center; color: var(--muted);">
-        Be the first to hear about tickets and updates.
-    </p>
+<div class="container">
 
-    <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfaoxTG4EFEg1JrciLuYrGdon9V8X9vvr7cZRnm9fXDVitEPQ/viewform?embedded=true"
-        width="100%"
-        height="220"
-        style="border:none; margin-top:20px;">
-    </iframe>
+<h2 class="section-title">
+
+Join Our Newsletter
+
+</h2>
+
+<p class="section-intro">
+
+Be the first to hear about guest announcements, ticket releases, exclusive offers and exciting event updates.
+
+</p>
+
+<div class="newsletter-box">
+
+<iframe
+
+src="https://docs.google.com/forms/d/e/1FAIpQLSfaoxTG4EFEg1JrciLuYrGdon9V8X9vvr7cZRnm9fXDVitEPQ/viewform?embedded=true"
+
+width="100%"
+
+height="260"
+
+style="border:none;border-radius:12px;">
+
+</iframe>
+
+</div>
+
+</div>
+
 </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
+<!-- ===========================
+CONTACT
+============================ -->
 
-    <p>Email: lostinpagesevents@gmail.com</p>
+<section id="contact" style="background:#f5f7fb;">
 
-    <p>
-        Instagram:
-        <a href="https://instagram.com/lostinpagesevents" target="_blank" rel="noopener noreferrer">
-            @lostinpagesevents
-        </a>
-    </p>
+<div class="container">
 
-    <p>
-        TikTok:
-        <a href="https://tiktok.com/@lostinpagesevent" target="_blank" rel="noopener noreferrer">
-            @lostinpagesevent
-        </a>
-    </p>
+<h2 class="section-title">
+
+Get In Touch
+
+</h2>
+
+<p class="section-intro">
+
+Have a question? We'd love to hear from you.
+
+</p>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>Email</h3>
+
+<p>
+
+lostinpagesevents@gmail.com
+
+</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Instagram</h3>
+
+<p>
+
+<a href="https://instagram.com/lostinpagesevents" target="_blank">
+
+@lostinpagesevents
+
+</a>
+
+</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>TikTok</h3>
+
+<p>
+
+<a href="https://tiktok.com/@lostinpagesevent" target="_blank">
+
+@lostinpagesevent
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <footer>
-    <p>&copy; 2026 Lost In Pages Events</p>
+
+<div class="container">
+
+<p>
+
+© 2027 Lost In Pages Events
+
+</p>
+
+</div>
+
 </footer>
 
-<script>
-const stars = document.getElementById("stars");
+<style>
 
-for (let i = 0; i < 60; i++) {
-    const s = document.createElement("div");
-    s.classList.add("star");
+/* ===========================
+EVENT CARDS
+============================ */
 
-    s.style.left = Math.random() * 100 + "vw";
-    s.style.top = Math.random() * 100 + "vh";
-    s.style.animationDuration = (5 + Math.random() * 10) + "s";
-    s.style.opacity = Math.random();
+.event-grid{
 
-    stars.appendChild(s);
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+margin-top:60px;
+
 }
 
-const sections = document.querySelectorAll("section");
+.event-card{
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, {
-    threshold: 0.15
+background:white;
+padding:45px;
+border-radius:22px;
+text-decoration:none;
+color:#24304d;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+transition:.35s;
+
+}
+
+.event-card:hover{
+
+transform:translateY(-10px);
+box-shadow:0 35px 70px rgba(0,0,0,.12);
+
+}
+
+.icon{
+
+font-size:2.8rem;
+margin-bottom:25px;
+
+}
+
+.event-card h3{
+
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+margin-bottom:18px;
+
+}
+
+.event-card p{
+
+line-height:1.8;
+margin-bottom:25px;
+
+}
+
+.event-card span{
+
+font-weight:700;
+color:#191970;
+
+}
+
+/* ===========================
+NEWSLETTER
+============================ */
+
+.newsletter-box{
+
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+}
+
+/* ===========================
+CONTACT
+============================ */
+
+.contact-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+
+}
+
+.contact-card{
+
+background:white;
+padding:45px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.contact-card h3{
+
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+margin-bottom:20px;
+
+}
+
+.contact-card p{
+
+font-size:1.05rem;
+
+}
+
+.contact-card a{
+
+color:#191970;
+text-decoration:none;
+font-weight:600;
+
+}
+
+.contact-card a:hover{
+
+text-decoration:underline;
+
+}
+
+/* ===========================
+FOOTER
+============================ */
+
+footer{
+
+background:#191970;
+padding:60px 8%;
+text-align:center;
+color:white;
+font-size:.95rem;
+
+}
+
+</style>
+
+<script>
+
+/* ===========================
+GENERATE STARS
+============================ */
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+const star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+star.style.opacity=Math.random();
+
+star.style.animationDuration=(8+Math.random()*12)+"s";
+
+stars.appendChild(star);
+
+}
+
+/* ===========================
+FADE IN SECTIONS
+============================ */
+
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+
+{opacity:0,transform:"translateY(40px)"},
+
+{opacity:1,transform:"translateY(0)"}
+
+],{
+
+duration:900,
+
+fill:"forwards"
+
 });
 
-sections.forEach(section => observer.observe(section));
+}
+
+});
+
+},{threshold:.15});
+
+sections.forEach(section=>observer.observe(section));
+
 </script>
 
 </body>
