@@ -26,6 +26,130 @@
 }
 
 
+/* NAVIGATION */
+
+
+nav {
+
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:var(--midnight);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:
+
+        1px solid rgba(255,255,255,0.08);
+
+}
+
+
+
+.nav-container {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 40px;
+
+}
+
+
+.nav-logo {
+
+    font-family:"Cinzel Decorative", serif;
+
+    color:var(--text);
+
+    font-size:clamp(0.9rem,1.5vw,1.1rem);
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    white-space:nowrap;
+
+}
+
+
+nav ul {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:26px;
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+
+nav a {
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    letter-spacing:1px;
+
+    font-size:clamp(0.9rem,1.5vw,1.1rem);
+
+    transition:0.3s;
+
+}
+
+    nav a:hover {
+
+
+    color:var(--night);
+
+}
+
+
+nav li:last-child a {
+
+    background:white;
+
+    color:var(--night);
+
+    padding:10px 22px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.35);
+
+}
+
+
+nav li:last-child a:hover {
+
+    background:var(--night);
+
+    color:white;
+
+    transform:translateY(-2px);
+
+}
+
+
+ 
+
 /* PAGE */
 
 body{
@@ -96,7 +220,7 @@ h1{
 
 
 .subtitle{
-    font-size:2rem;
+    font-size:1.5rem;
 }
 
 
