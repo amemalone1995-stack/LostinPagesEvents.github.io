@@ -1091,17 +1091,20 @@ footer {
 
 @media(max-width:700px){
 
-    .nav-container {
+   .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        flex-direction:list;
-
-        align-items:center;
-
-        padding:15px;
-
-        gap:15px;
-
-    }
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    list-style: none;
+}
 
 
     .nav-logo {
@@ -1113,17 +1116,6 @@ footer {
     }
 
 
-    nav ul {
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:12px;
-
-        width:100%;
-
-    }
 
 
 
