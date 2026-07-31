@@ -13,8 +13,9 @@
 :root{
     --midnight:#4838DB;
     --night:#201060;
-    --magic:#FFFFFF;
-    --accent:#9932CC;
+    --white:#FFFFFF;
+    --glass:rgba(255,255,255,0.12);
+    --border:rgba(255,255,255,0.35);
 }
 
 *{
@@ -24,11 +25,11 @@
 }
 
 body{
-    font-family:'Cinzel Decorative',sans-serif;
+    font-family:'Inter', sans-serif;
+    background:var(--midnight);
     color:white;
-    background: var(--night);
-    position: relative;
-    overflow-x: hidden;
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
 
@@ -84,26 +85,34 @@ h1{
 }
 
 .policy{
-    background:var(--midnight);
+    background:var(--glass);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:25px;
+    margin:25px 0;
     color:white;
-    padding:30px;
-    margin-bottom:25px;
-    border-radius:18px;
-    border:2px solid #9932CC;
-    box-shadow:0 0 20px rgba(0,0,0,.15);
-    text-align: center;
+    position:relative;
+    z-index:3;
+    backdrop-filter:blur(8px);
+    text-align:center;
 }
-    
+
 
 .policy h2{
     font-family:'Cinzel Decorative', serif;
+    font-size:1.8rem;
+    color:white;
     margin-bottom:15px;
 }
 
+
 .policy p{
-    line-height:1.8;
+    color:white;
+    line-height:1.7;
+    margin-bottom:15px;
 }
 
+    
 /* Make policy cards clickable */
 .policy-link{
     text-decoration:none;
@@ -123,19 +132,21 @@ h1{
 
 .back{
     display:inline-block;
-    margin:40px auto;
     padding:14px 30px;
-    background:var(--midnight);
-    color:white;
+    background:white;
+    color:var(--night);
     text-decoration:none;
-    border-radius:10px;
-    font-weight:600;
-    transition:0.2s ease;
+    border-radius:25px;
+    font-weight:bold;
+    transition:.3s;
 }
 
+
 .back:hover{
-    transform:translateY(-2px);
+    background:var(--night);
+    color:white;
 }
+
 
 footer{
     text-align:center;
