@@ -10,6 +10,7 @@
 <style>
 :root{
     --midnight:#4838DB;
+    --night:#201060;
     --magic:#FFFFFF;
     --accent:#9932CC;
 }
@@ -27,6 +28,7 @@ body{
     position: relative;
     overflow-x: hidden;
 }
+
 
 /* STAR LAYERS */
 #stars, #shooting-stars{
@@ -142,6 +144,168 @@ footer{
 
 <body>
 
+  /* NAVIGATION */
+
+nav{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,0.2);
+
+}
+
+
+.nav-container{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 40px;
+
+}
+
+
+.nav-logo{
+
+    font-family:"Cinzel Decorative", serif;
+
+    color:white;
+
+    font-size:clamp(0.9rem,1.5vw,1.1rem);
+
+    letter-spacing:1px;
+
+    white-space:nowrap;
+
+}
+
+
+
+nav ul{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:26px;
+
+    list-style:none;
+
+}
+
+
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-family:"Cinzel Decorative", serif;
+
+    font-size:clamp(0.9rem,1.5vw,1.1rem);
+
+    letter-spacing:1px;
+
+    transition:.3s;
+
+}
+
+
+
+nav a:hover{
+
+    opacity:.7;
+
+}
+
+
+
+nav li:last-child a{
+
+    background:white;
+
+    color:var(--night);
+
+    padding:10px 22px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+}
+
+
+
+nav li:last-child a:hover{
+
+    background:var(--night);
+
+    color:white;
+
+}
+
+    /* MOBILE */
+
+@media(max-width:600px){
+
+    h1{
+        font-size:3rem;
+    }
+
+    .policy{
+        padding:20px;
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<nav>
+
+    <div class="nav-container">
+
+        <div class="nav-logo">
+            Lost In Pages Events
+        </div>
+
+
+        <ul>
+
+            <li><a href="https://lostinpagesevents.co.uk/index.html"
+                    target="_blank"
+                   rel="noopener noreferrer">
+                    Home
+            </a>
+            </li>
+        <ul>
+
+            <li>
+                <a href="https://www.eventbrite.co.uk/e/lost-in-pages-brightons-newest-book-event-tickets-1992957687091?utm_experiment=test_share_listing&aff=ebdsshios&sg=f85606848e1d295860e7303a016f1e3bd4de5b39f76db082bb221ff8005ed2113809f6419407b0cc4c11094717f557bc4c7b17e6ae2e0d27d760214a00aef84d4b33c8b72dee2f256543bce8dd98"
+                   target="_blank"
+        rel="noopener noreferrer">
+            Get Tickets
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+    
 <!-- STAR BACKGROUND LAYERS -->
 <div id="stars"></div>
 <div id="shooting-stars"></div>
