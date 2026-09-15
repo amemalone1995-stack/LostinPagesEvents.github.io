@@ -358,6 +358,7 @@ h1{
 
 /* PHOTOS */
 
+```css
 .photo-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -367,8 +368,9 @@ h1{
 .photo-grid img{
     width:100%;
     height:300px;
-    object-fit:cover;
+    object-fit:contain;
     object-position:center;
+    background:rgba(255,255,255,0.08);
     border-radius:15px;
     border:1px solid var(--border);
     transition:.3s;
@@ -378,6 +380,19 @@ h1{
 .photo-grid img:hover{
     transform:scale(1.03);
 }
+
+/* Author names */
+
+#authors .author-name{
+    text-align:center;
+    margin-top:10px;
+    color:white;
+    font-family:"Cinzel Decorative", serif;
+    font-size:1rem;
+    line-height:1.4;
+}
+```
+
 
 
 
