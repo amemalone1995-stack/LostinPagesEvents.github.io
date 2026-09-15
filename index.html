@@ -357,120 +357,118 @@ header {
 }
 
 
-
-
-/* IMAGE ROLL */
-
+```css
+/* ================================
+   AUTHOR IMAGE CAROUSEL
+================================ */
 
 .image-carousel {
-
-
-    width:min(95%,1200px);
-
-    margin:0 auto 35px;
-
-    overflow:hidden;
-
-    border-radius:16px;
-
-    border:
-
-        3px solid rgba(156,199,255,0.7);
-
-
+    width: min(95%, 1200px);
+    margin: 0 auto 35px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 3px solid rgba(156, 199, 255, 0.7);
     box-shadow:
-
-        0 0 20px rgba(156,199,255,0.35);
-
+        0 0 20px rgba(156, 199, 255, 0.35);
+    position: relative;
 }
 
-
-
-
+/* The moving strip */
 .carousel-track {
-
-
-    display:flex;
-
-    width:max-content;
-
-
-    animation:
-
-        scrollImages 35s linear infinite;
-
+    display: flex;
+    width: max-content;
+    align-items: stretch;
+    animation: scrollImages 60s linear infinite;
+    will-change: transform;
 }
 
-
-
-.carousel-track img {
-
-
-    width:
-
-        clamp(220px,25vw,350px);
-
-
-    height:
-
-        clamp(auto);
-
-
-    object-fit:cover;
-
-
-    margin-right:20px;
-
-
-    border-radius:12px;
-
+/* Each author */
+.author-card {
+    flex: 0 0 auto;
+    width: clamp(180px, 22vw, 260px);
+    margin-right: 20px;
+    text-align: center;
+    background: var(--midnight);
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
 }
 
+/* Author photograph */
+.author-card img {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 28vw, 320px);
+    object-fit: cover;
+}
 
+/* Author name */
+.author-card span {
+    display: block;
+    padding: 12px 8px;
+    font-family: "Cinzel Decorative", serif;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    line-height: 1.3;
+    color: white;
+}
 
+/* Existing standalone carousel images */
+.carousel-track > img {
+    flex: 0 0 auto;
+    width: clamp(220px, 25vw, 350px);
+    height: clamp(220px, 28vw, 320px);
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 12px;
+}
 
+/*
+   IMPORTANT:
+   The track contains two identical sets of cards.
+   Moving -50% means the first set disappears
+   exactly as the second set takes its place.
+*/
 @keyframes scrollImages {
-
-
     from {
-
-        transform:translateX(0);
-
+        transform: translateX(0);
     }
-
 
     to {
+        transform: translateX(-50%);
+    }
+}
 
-        transform:translateX(-50%);
+/* Pause when the visitor hovers */
+.image-carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
 
+/* Mobile */
+@media (max-width: 768px) {
+
+    .author-card {
+        width: 170px;
+        margin-right: 15px;
     }
 
+    .author-card img {
+        height: 220px;
+    }
+
+    .carousel-track {
+        animation-duration: 45s;
+    }
 }
 
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
 
-
-
-.image-carousel:hover .carousel-track {
-
-
-    animation-play-state:paused;
-
+    .carousel-track {
+        animation: none;
+        transform: none;
+    }
 }
-
-
-
-
-/* HERO */
-
-
-.hero {
-
-
-    text-align:center;
-
-}
-
-
+```
 
 
 
@@ -1224,6 +1222,7 @@ footer {
 
 
 
+    
 <header>
 
 
@@ -1537,70 +1536,7 @@ footer {
 <>
 
 
-<img src="images/RC.png" alt="Lost In Pages event" loading="eager">
 
-<img src="images/KA.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/2host.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/IE.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/LL.png" alt="Lost In Pages event" loading="eager">
-    
-<img src="images/1nar.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/1Panel.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/5.png" alt="Lost In Pages event" loading="eager">
-    
-<img src="images/WW.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/GE.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/6.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/8.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/9.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/JC.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/10.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/11.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/1host.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/3.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/4.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/19.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/13.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/14.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/15.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/16.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/17.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/18.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/20.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/12.png" alt="Lost In Pages event" loading="eager">
-
-<img src="images/EMS.png" alt="Lost In Pages event" loading="eager">
-<img src="images/GLY.png" alt="Lost In Pages event" loading="eager">
-<img src="images/HR.png" alt="Lost In Pages event" loading="eager">
-<img src="images/KJF.png" alt="Lost In Pages event" loading="eager">
-<img src="images/WSM.png" alt="Lost In Pages event" loading="eager">
-
-
-</div>
 
 </div>
 
