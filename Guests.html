@@ -357,25 +357,20 @@ h1{
 
 
 /* PHOTOS */
-.photo-grid{
+
+    .photo-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns:repeat(3, 1fr);
     gap:20px;
 }
 
 .photo-grid img{
     width:100%;
     height:300px;
-    object-fit:cover;
-    object-position:center;
+    object-fit:contain;
     border-radius:15px;
     border:1px solid var(--border);
-    transition:.3s;
     display:block;
-}
-
-.photo-grid img:hover{
-    transform:scale(1.03);
 }
 
 /* Author names */
@@ -657,14 +652,19 @@ Our Authors
 
 
 <img src="images/Georgia Leighton Medium.jpeg" alt="Georgia Leighton - Author"data-name="Georgia Leighton">
-
+<p>Georgia Leighton</p>
+    
 <img src="images/Imani Erriu.jpg" alt="Immani Erriu - Author">
+<p> Imani Erriu</p>
     
 <img src="images/Ali Williams 1.jpg" alt="Ali Williams - Author">
-
+<p>Ali Williams</p>
+    
 <img src="images/B. A. Pepper Medium.jpeg" alt="B.A. Pepper - Author">
-
+<p>B.A. Pepper</p>
+    
 <img src="images/Bekah Jaymes.jpg" alt="Bekah James - Author">
+<p>Bekah Jaymes</p>
 
 <img src="images/C. K. Andersson Small.jpeg" alt="C. K. Andersson - Author">
 
