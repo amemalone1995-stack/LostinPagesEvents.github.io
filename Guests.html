@@ -355,48 +355,93 @@ h1{
 }
 
 
-
 /* PHOTOS */
 
-.photo-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
 }
 
-    
+/* All gallery images */
+.photo-grid > img,
+.author-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Author cards */
+.author-card {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Author links */
 .author-card a {
     display: block;
     text-decoration: none;
 }
 
+/* Author image hover */
 .author-card a img {
-    width:100%;
-    display:block;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 
 .author-card a:hover img {
     transform: scale(1.03);
     opacity: 0.85;
     cursor: pointer;
+}
+
+/* Author name overlay */
+.author-card span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(32, 16, 96, 0.85);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    font-family: "Cinzel Decorative", serif;
+    font-size: .9rem;
+}
+
+/* Author names */
+#authors .author-name {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    font-family: "Cinzel Decorative", serif;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .photo-grid > img,
+    .author-card img {
+        height: 300px;
+    }
 
 }
 
-.author-card span{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    background:rgba(32,16,96,0.85);
-    color:white;
-    padding:10px;
-    text-align:center;
-    border-radius:0 0 15px 15px;
-    font-family:"Cinzel Decorative",serif;
-    font-size:.9rem;
-}
+
 
 /* Author names */
 
