@@ -358,19 +358,37 @@ h1{
 
 /* PHOTOS */
 
-    .photo-grid{
+.photo-grid{
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.photo-grid img{
+.author-card{
+    position:relative;
+}
+
+.author-card img{
     width:100%;
     height:300px;
     object-fit:contain;
     border-radius:15px;
     border:1px solid var(--border);
     display:block;
+}
+
+.author-card span{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(32,16,96,0.85);
+    color:white;
+    padding:10px;
+    text-align:center;
+    border-radius:0 0 15px 15px;
+    font-family:"Cinzel Decorative",serif;
+    font-size:.9rem;
 }
 
 /* Author names */
@@ -575,7 +593,7 @@ Our Hosts & Narrators!
 </summary>
 
 
-<div class="photo-grid">
+<div class="-grid">
 
 
 <img src="images/1host.png" 
@@ -651,8 +669,9 @@ Our Authors
 <div class="photo-grid">
 
 
-<img src="images/Georgia Leighton Medium.jpeg" alt="Georgia Leighton - Author"data-name="Georgia Leighton">
-<p>Georgia Leighton</p>
+<div class="author-card">
+    <img src="images/Georgia Leighton Medium.jpeg" alt="Georgia Leighton - Author">
+    <span>Georgia Leighton</span>
     
 <img src="images/Imani Erriu.jpg" alt="Immani Erriu - Author">
 <p> Imani Erriu</p>
